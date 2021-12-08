@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 19:09:52 by msantos-          #+#    #+#             */
-/*   Updated: 2021/12/06 20:47:49 by msantos-         ###   ########.fr       */
+/*   Created: 2021/12/07 16:26:49 by msantos-          #+#    #+#             */
+/*   Updated: 2021/12/08 20:44:29 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
-using namespace std;
 
-int    main(int argc, char **argv)
-{
-    int x;
-    int y;
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-    x = 1;
-    y = 0;
-    if(argc == 1)
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    while(argv[x])
-    {
-        while(argv[x][y] != '\0')
-        {
-            cout << (char)std::toupper(argv[x][y]);
-            y++;
-        }
-        cout << " ";
-        x++;
-        y = 0;
-    }
-    
-    return (0);
-    
-}
+class  Phonebook {
+    public:
+    std::string first_name;
+    std::string last_name;
+    std::string nickname;
+    std::string phone_number;
+    std::string darkest_secret;
+
+};
+
+#endif
