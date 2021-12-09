@@ -41,7 +41,7 @@ public:
 private:
 
 	static int	_nbAccounts;
-	static int	_totalAmount;
+	static int	_totalAmount; //
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
@@ -49,8 +49,8 @@ private:
 
 	int				_accountIndex;
 	int				_amount;
-	int				_nbDeposits;
-	int				_nbWithdrawals;
+	int				_nbDeposits; //
+	int				_nbWithdrawals; //
 
 	Account( void );
 
