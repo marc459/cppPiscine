@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:29:02 by msantos-          #+#    #+#             */
-/*   Updated: 2022/02/14 15:53:35 by marcos           ###   ########.fr       */
+/*   Updated: 2022/02/14 20:35:44 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	Account::makeDeposit(int deposit)
 		";amount:" << this->_amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
-bool	Account::makeWithdrawal(int withdrawl)
+bool	Account::makeWithdrawal(int withdrawal)
 {
 	//[19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
 	int	previous;
@@ -85,15 +85,16 @@ bool	Account::makeWithdrawal(int withdrawl)
 	previous = _amount;
 	if (withdrawal > _amount)
 	{
-		_displayTimestamp();
+		//_displayTimestamp();
 		std::cout << "index:" << this->_accountIndex << ";p_amount:"
 		<< previous << ";withdrawal:refused" << std::endl;
 		return false;
 	}
+	_amount -= withdrawal;
 	this->_nbWithdrawals++;
 	//_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";p_amount:"
-		<< previous << ";withdrawl:" << withdrawl <<
-		";amount:" << this->_amount << ";nb_withdrawls:" << _nbWithdrawals << std::endl;
+		<< previous << ";withdrawal:" << withdrawal <<
+		";amount:" << this->_amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return true;
 }
