@@ -6,13 +6,13 @@
 #    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/02/14 14:49:26 by marcos           ###   ########.fr        #
+#    Updated: 2022/02/17 14:47:41 by marcos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #PROGRAMS
-PROGRAM = ex00
+PROGRAM = ex02
 
 #PATHS
 OBJ_PATH = ./objs
