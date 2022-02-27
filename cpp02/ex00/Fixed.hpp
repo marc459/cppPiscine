@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   karen.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 19:00:07 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/25 13:22:04 by marcos           ###   ########.fr       */
+/*   Created: 2022/02/25 13:01:03 by marcos            #+#    #+#             */
+/*   Updated: 2022/02/25 14:29:00 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,22 @@
 #include <cctype>
 #include <string>
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-class Karen{
+class Fixed{
     private:
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
+        int _value;
+        static const int fractbits = 8;
     public:
-        void complain(std::string level);
-        Karen(void);
-        ~Karen(void);
+        Fixed( void );
+        Fixed(const Fixed&);
+        ~Fixed();
+        Fixed& operator= (const Fixed& fraction);
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
+        
 };
+
 
 #endif

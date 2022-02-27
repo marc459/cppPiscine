@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 19:00:07 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/25 13:22:04 by marcos           ###   ########.fr       */
+/*   Created: 2022/02/25 13:27:12 by marcos            #+#    #+#             */
+/*   Updated: 2022/02/25 13:27:15 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fstream>
-#include <iostream>
-#include <cctype>
-#include <string>
+#include "Fixed.hpp"
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
-
-class Karen{
-    private:
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
-    public:
-        void complain(std::string level);
-        Karen(void);
-        ~Karen(void);
-};
-
-#endif
+int    main(int argc, char **argv)
+{
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
+}
