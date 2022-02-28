@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/27 17:28:07 by marcos           ###   ########.fr       */
+/*   Updated: 2022/02/28 16:12:01 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,50 @@ std::ostream &operator <<(std::ostream &out, const Fixed &fixed)
     out << fixed.toFloat();
     return out;
 }
+// COMPARISON OPERATORS
+bool Fixed::operator < (const Fixed& fixed) const
+{
+    if(fixed.toFloat() < this->toFloat())
+        return (false);
+    else
+        return (true);
+}
+bool Fixed::operator >= (const Fixed& fixed) const
+{
+    if(fixed.toFloat() >= this->toFloat())
+        return (false);
+    else
+        return (true);
+}
 
+bool Fixed::operator <= (const Fixed& fixed) const
+{
+    if(fixed.toFloat() <= this->toFloat())
+        return (false);
+    else
+        return (true);
+}
+bool Fixed::operator > (const Fixed& fixed) const
+{
+    if(fixed.toFloat() > this->toFloat())
+        return (false);
+    else
+        return (true);
+}
+bool Fixed::operator == (const Fixed& fixed) const
+{
+    if(fixed.toFloat() == this->toFloat())
+        return (true);
+    else
+        return (false);
+}
+bool Fixed::operator != (const Fixed& fixed) const
+{
+    if(fixed.toFloat() != this->toFloat())
+        return (true);
+    else
+        return (false);
+}
 // ARITHMETIC OPERATORS
 
 Fixed &Fixed::operator * (const Fixed &fixed) const
@@ -90,6 +133,7 @@ Fixed &Fixed::operator * (const Fixed &fixed) const
     *retFixed = Fixed(val);
     return(*retFixed);
 }
+
 Fixed &Fixed::operator + (const Fixed &fixed) const
 {
     Fixed *retFixed;
@@ -110,7 +154,45 @@ Fixed &Fixed::operator / (const Fixed &fixed) const
 {
     Fixed *retFixed;
     float val;
-    val = fixed.toFloat() / this->toFloat();
+    val = fixed._value / this->_value;
     *retFixed = Fixed(val);
     return(*retFixed);
+}
+
+ void Fixed::operator ++( void )
+ {
+     this->_value++;
+ }
+
+ //min and max
+const Fixed &Fixed::min(const Fixed &fixed, const Fixed &fixed2)
+{
+    if(fixed._value < fixed2._value)
+        return(fixed);
+    else
+        return(fixed2);
+}
+
+Fixed &Fixed::min(Fixed &fixed,  Fixed &fixed2)
+{
+    if(fixed._value < fixed2._value)
+        return(fixed);
+    else
+        return(fixed2);
+}
+
+const Fixed &Fixed::max(const Fixed &fixed, const Fixed &fixed2)
+{
+    if(fixed._value > fixed2._value)
+        return(fixed);
+    else
+        return(fixed2);
+}
+
+Fixed &Fixed::max(Fixed &fixed,  Fixed &fixed2)
+{
+    if(fixed._value > fixed2._value)
+        return(fixed);
+    else
+        return(fixed2);
 }
