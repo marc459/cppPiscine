@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/28 16:12:01 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/02 11:02:16 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ Fixed &Fixed::operator=(const Fixed &fixed)
 	if (this == &fixed)
 		return (*this);
 	this->_value = fixed.getRawBits();
-    std::cout << "h" << std::endl;
 	return (*this);
 }
 
@@ -82,14 +81,14 @@ std::ostream &operator <<(std::ostream &out, const Fixed &fixed)
 // COMPARISON OPERATORS
 bool Fixed::operator < (const Fixed& fixed) const
 {
-    if(fixed.toFloat() < this->toFloat())
+    if(fixed._value < this->_value)
         return (false);
     else
         return (true);
 }
 bool Fixed::operator >= (const Fixed& fixed) const
 {
-    if(fixed.toFloat() >= this->toFloat())
+    if(fixed._value >= this->_value)
         return (false);
     else
         return (true);
@@ -97,28 +96,28 @@ bool Fixed::operator >= (const Fixed& fixed) const
 
 bool Fixed::operator <= (const Fixed& fixed) const
 {
-    if(fixed.toFloat() <= this->toFloat())
+    if(fixed._value <= this->_value)
         return (false);
     else
         return (true);
 }
 bool Fixed::operator > (const Fixed& fixed) const
 {
-    if(fixed.toFloat() > this->toFloat())
+    if(fixed._value > this->_value)
         return (false);
     else
         return (true);
 }
 bool Fixed::operator == (const Fixed& fixed) const
 {
-    if(fixed.toFloat() == this->toFloat())
+    if(fixed._value == this->_value)
         return (true);
     else
         return (false);
 }
 bool Fixed::operator != (const Fixed& fixed) const
 {
-    if(fixed.toFloat() != this->toFloat())
+    if(fixed._value != this->_value)
         return (true);
     else
         return (false);
@@ -129,7 +128,7 @@ Fixed &Fixed::operator * (const Fixed &fixed) const
 {
     Fixed *retFixed;
     float val;
-    val = fixed.toFloat() * this->toFloat();
+    val = fixed._value * this->_value;
     *retFixed = Fixed(val);
     return(*retFixed);
 }
@@ -138,7 +137,7 @@ Fixed &Fixed::operator + (const Fixed &fixed) const
 {
     Fixed *retFixed;
     float val;
-    val = fixed.toFloat() + this->toFloat();
+    val = fixed._value + this->_value;
     *retFixed = Fixed(val);
     return(*retFixed);
 }
@@ -146,7 +145,7 @@ Fixed &Fixed::operator - (const Fixed &fixed) const
 {
     Fixed *retFixed;
     float val;
-    val = fixed.toFloat() - this->toFloat();
+    val = fixed._value- this->_value;
     *retFixed = Fixed(val);
     return(*retFixed);
 }
