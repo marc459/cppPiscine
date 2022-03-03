@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:07 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/03 17:23:18 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/03 17:12:27 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 ClapTrap &ClapTrap::operator = (const ClapTrap &ct)
 {
     std::cout << "Assignation operator called" << std::endl;
-	if (&ct == this)
+    if (&ct == this)
 		return *this;
     this->setHitPoints(ct.getHitPoints());
     this->setEnergyPoints(ct.getEnergyPoints());
