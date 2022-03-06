@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:51:29 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 22:39:17 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/06 17:19:57 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@ AMateria &AMateria::operator =( const AMateria &amateria )
     std::cout << "Assignation operator called" << std::endl;
     this->type = amateria.type;
     return (*this);
+}
+
+void use(ICharacter& target)
+{
+    std::cout << "Using unknown materia" <<  std::endl;
+    target.getName();
 }

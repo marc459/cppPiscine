@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:44:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 22:44:42 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/06 17:19:41 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ Cure &Cure::operator =( const Cure &cure )
 
 AMateria* Cure::clone() const{
     return (new Cure(*this));
+}
+
+void use(ICharacter& target)
+{
+    std::cout << "heals " << target.getName() << "’s wounds" <<  std::endl;
 }

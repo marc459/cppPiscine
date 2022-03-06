@@ -6,7 +6,7 @@
 #    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/03/05 22:45:33 by marcos           ###   ########.fr        #
+#    Updated: 2022/03/06 17:24:34 by marcos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp
+PROGRAM_SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 
 #OBJS

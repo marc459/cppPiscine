@@ -6,18 +6,20 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:51:32 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 22:41:20 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/06 17:24:01 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <fstream>
 #include <iostream>
 #include <cctype>
 #include <string>
+#include "ICharacter.hpp"
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+class ICharacter;
 
 class AMateria
 {
@@ -31,6 +33,6 @@ class AMateria
         AMateria(std::string const & type);
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
-        //virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target);
 };
 #endif
