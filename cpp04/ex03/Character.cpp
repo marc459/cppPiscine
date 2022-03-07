@@ -6,22 +6,32 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:45:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/06 17:13:09 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:10:51 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-#include "Character.hpp"
-Character::Character( void )
+
+Character::Character( void ):  name(""), nequip(0)
 {
     std::cout << "Character Constructor main called" << std::endl;
+    inventory[0] = NULL;
+    inventory[1] = NULL;
+    inventory[2] = NULL;
+    inventory[3] = NULL;
 }
 
-Character::Character( std::string name )
+Character::Character( std::string name ): nequip(0)
 {
     std::cout << "Character Constructor called" << std::endl;
+    inventory[0] = NULL;
+    inventory[1] = NULL;
+    inventory[2] = NULL;
+    inventory[3] = NULL;
     this->name = name;
 }
 

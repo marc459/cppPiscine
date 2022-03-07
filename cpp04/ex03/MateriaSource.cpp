@@ -6,13 +6,13 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 15:07:21 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/06 17:39:44 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:08:24 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource( void )
+MateriaSource::MateriaSource( void ): nmaterias(0)
 {
     std::cout << "MateriaSource Constructor main called" << std::endl;
 }
@@ -54,7 +54,7 @@ AMateria* MateriaSource::createMateria(std::string const &type)
 {
     if(type == "ice")
         return (new Ice());
-    else if((type == "Cure"))
+    else if(type == "cure")
         return (new Cure());
     else
         return (NULL);

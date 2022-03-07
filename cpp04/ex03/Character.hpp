@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:45:40 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/06 17:13:25 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/07 13:49:22 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Character: public ICharacter
         Character( void );
         Character( std::string name );
         Character(const Character &copy);
-        virtual ~Character( void );
+        ~Character( void );
         Character &operator =( const Character &character );
 
 

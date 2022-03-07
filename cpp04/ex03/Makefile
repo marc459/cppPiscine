@@ -6,7 +6,7 @@
 #    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/03/06 17:24:34 by marcos           ###   ########.fr        #
+#    Updated: 2022/03/07 17:49:30 by marcos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ PROGRAM_SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSourc
 PROGRAM_OBJS = $(addprefix $(OBJ_PATH)/,$(PROGRAM_SRCS:.cpp=.o))
 
 #FLAGS
-CXX = clang++ --std=c++98  -Wall -Werror -Wextra
+CXX = clang++ --std=c++98 # -Wall -Werror -Wextra
 #clang 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = #-Wall -Werror -Wextra
 
 #INSTRUCTIONS
 all: $(PROGRAM)

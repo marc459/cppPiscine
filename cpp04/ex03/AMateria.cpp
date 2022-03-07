@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:51:29 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/06 17:19:57 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/07 14:35:44 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ AMateria &AMateria::operator =( const AMateria &amateria )
     return (*this);
 }
 
-void use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
     std::cout << "Using unknown materia" <<  std::endl;
     target.getName();

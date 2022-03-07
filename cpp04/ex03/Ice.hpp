@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:56:50 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 22:37:28 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/07 13:50:18 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class Ice: public AMateria
         ~Ice( void );
         Ice &operator =( const Ice &ice );
         AMateria* clone() const;
-    
+        void use(ICharacter& target);
 };
 #endif
