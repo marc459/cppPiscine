@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:31 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/08 14:49:25 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/09 19:11:52 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,23 @@ const char *Bureaucrat::gradeTooHighException::what() const throw() {
 
 const char *Bureaucrat::gradeTooLowException::what() const throw() {
 	return "Grade too low";
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+    /*if(f->beSigned(this))
+        std::cout << this->getName() << " signs " << f->getName() << std::endl;
+    else
+        std::cout << this->getName() << " cannot sign " << f->getName() << "because " << << std::endl;*/
+    
+    try
+    {
+        f.beSigned(*this);
+        std::cout << this->getName() << " signs " << f.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->getName() << " cannot sign " << f.getName() << "because " << e.what() << std::endl;
+    }
+    
 }

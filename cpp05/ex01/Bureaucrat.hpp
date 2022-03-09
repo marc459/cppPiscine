@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:35 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/08 14:38:25 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/09 19:23:26 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include "Form.hpp"
 
-
+class Form;
 class Bureaucrat{
     private:
         std::string name;
@@ -42,6 +43,7 @@ class Bureaucrat{
         };
         void IncrementGrade();
         void DecrementGrade();
+        void signForm( Form &f);
 
         std::string getName() const
         {
@@ -62,6 +64,6 @@ class Bureaucrat{
         }
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
+std::ostream& operator <<(std::ostream& os, const Bureaucrat& b);
 
 #endif

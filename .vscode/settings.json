@@ -68,7 +68,9 @@
         "numeric": "cpp",
         "random": "cpp",
         "fstream": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "iomanip": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
