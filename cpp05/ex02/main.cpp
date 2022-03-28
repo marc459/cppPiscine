@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/18 03:10:54 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/28 15:12:01 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int main()
 
 	try
 	{
-		Bureaucrat	bureaucrat("Godfrey", 1);
-		RobotomyRequestForm	pardon("Billy");
+		Bureaucrat	bureaucrat("Fernando", 1);
+		RobotomyRequestForm	pardon("Ballotelly");
 
 		bureaucrat.signForm(pardon);
 		bureaucrat.executeForm(pardon);
