@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 19:20:54 by msantos-          #+#    #+#             */
-/*   Updated: 2022/03/18 02:51:44 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/29 21:33:27 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ const char *Form::gradeTooLowException::what() const throw() {
 
 void	Form::execute(Bureaucrat const & executor) const
 {
-	if (this->_signed == false)
-		throw Form::NotSignedException();
-	else if (executor.getGrade() > this->getGradeToExecute())
-		throw Form::GradeTooHighException();
+	if (this->isSigned == false)
+		throw Form::gradeTooHighException(); //
+	else if (executor.getGrade() > this->getGradeExec())
+		throw Form::gradeTooHighException();
 	else
 		std::cout << "Executed " << this->getName() << std::endl;
 }

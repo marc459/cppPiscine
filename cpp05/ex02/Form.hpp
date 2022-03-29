@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:58:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/03/18 02:53:07 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/29 21:28:35 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form{
 		Form(const Form &copy);
 		virtual	~Form(void);
 		Form &operator=(const Form &op);
-        void	Form::execute(Bureaucrat const & executor) const;
+        void execute(Bureaucrat const & executor) const;
         
         int    beSigned(const Bureaucrat &b);
 
@@ -78,8 +78,8 @@ class Form{
 };
 std::ostream	&operator<<(std::ostream &out, const Form &instance)
 {
-	out << instance.getName() << " , with execute grade " << instance.getGradeToExecute()
-		<< " and grade to be signed " << instance.getGradeToSign() << " is signed "
+	out << instance.getName() << " , with execute grade " << instance.getGradeExec()
+		<< " and grade to be signed " << instance.getGradeSigned() << " is signed "
 		<< instance.getisSigned() << std::endl;
 	return out;
 }

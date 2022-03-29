@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:31 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/18 03:09:39 by marcos           ###   ########.fr       */
+/*   Updated: 2022/03/29 21:30:29 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,11 @@ void Bureaucrat::executeForm(Form const & form)
     try
 	{
 		form.execute(*this);
-		std::cout << this->_name << " executes " << form.getName() << std::endl;
+		std::cout << this->name << " executes " << form.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->_name << " cannot execute " << form.getName() << " because ";
+		std::cout << this->name << " cannot execute " << form.getName() << " because ";
 		std::cout << e.what() << std::endl;
 	}
 }
