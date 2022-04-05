@@ -6,13 +6,13 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2021/12/08 21:42:22 by msantos-         ###   ########.fr        #
+#    Updated: 2022/04/05 19:03:21 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #PROGRAMS
-PROGRAM = ex00
+PROGRAM = megaphone
 
 #PATHS
 OBJ_PATH = ./objs
@@ -28,7 +28,7 @@ PROGRAM_OBJS = $(addprefix $(OBJ_PATH)/,$(PROGRAM_SRCS:.cpp=.o))
 #FLAGS
 CXX = clang++
 #clang 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 #INSTRUCTIONS
 all: $(PROGRAM)

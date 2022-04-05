@@ -3,98 +3,105 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 19:29:02 by msantos-          #+#    #+#             */
-/*   Updated: 2022/02/14 20:35:44 by marcos           ###   ########.fr       */
+/*   Created: 2022/04/05 20:09:26 by msantos-          #+#    #+#             */
+/*   Updated: 2022/04/05 20:09:29 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
-#include <ctime>
 
-int	Account::_nbAccounts = 0;
-int	Account::_totalAmount = 0;
-int	Account::_totalNbDeposits = 0;
-int	Account::_totalNbWithdrawals = 0;
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit)
 {
+	this->_accountIndex = _nbAccounts;
+    _nbAccounts++;
 	this->_amount = initial_deposit;
+	this->_totalAmount += this->_amount;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
-	this->_accountIndex = this->_nbAccounts++;
-	this->_totalAmount += initial_deposit;
-    //_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amount:"
-		<< initial_deposit << ";created" << std::endl;
+	//_displayTimestamp();
+	std::cout << "index:"<< this->_accountIndex <<";amount:" << this->_amount << ";created" << std::endl;
 }
 
 Account::~Account(void)
 {
-    //_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amount:"
-		<< this->_amount << ";closed" << std::endl;
+	//_displayTimestamp();
+	std::cout << "index:"<< this->_accountIndex <<";amount:" << this->_amount << ";closed" << std::endl;
+}
+
+int	Account::getNbAccounts(void)
+{
+    return (_nbAccounts);
+}
+int	Account::getTotalAmount(void)
+{
+	return (_totalAmount);
+}
+int	Account::getNbDeposits(void)
+{
+	return (_totalNbDeposits);
+}
+int	Account::getNbWithdrawals(void)
+{
+	return (_totalNbWithdrawals);
+}
+void	Account::displayAccountsInfos(void)
+{
+	//_displayTimestamp();
+	std::cout << "accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
+}
+void	Account::makeDeposit( int deposit )
+{
+	this->_amount += deposit;
+	_totalAmount += deposit;
+	this->_nbDeposits++;
+	_totalNbDeposits++;
+	//_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount - deposit << ";deposit:" << deposit << ";amount:" << this->_amount << ";nb_deposits:" << this->_nbDeposits << std::endl;
+}
+bool	Account::makeWithdrawal( int withdrawal )
+{
+	if (withdrawal < this->_amount)
+	{
+		this->_amount -= withdrawal;
+		_totalAmount -= withdrawal;
+		this->_nbWithdrawals++;
+		_totalNbWithdrawals++;
+		//_displayTimestamp();
+		std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount + withdrawal << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
+	}
+	else
+	{
+		//_displayTimestamp();
+		std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";withdrawal:refused" << std::endl;
+	}
+	return (1);
+}
+
+int		Account::checkAmount( void ) const
+{
+	std::cout << "ola k ase" << std::endl;
+	return(0);
+}
+void	Account::displayStatus( void ) const
+{
+	//_displayTimestamp();
+	std::cout << "index:"<< this->_accountIndex <<";amount:" << this->_amount << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
 void	Account::_displayTimestamp(void)
 {
-    char		buff[16];
-    std::time_t result = std::time(nullptr);
-    strftime(buff, sizeof(buff), "%Y%m%d_%H%M%S", localtime(&result));
-    std::cout << "[" << buff << "] " ;   
-}
+	time_t		timestamp;
+	char		buff[16];
 
-void Account::displayAccountsInfos(void)
-{
-    //[19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
-    //_displayTimestamp();
-	std::cout << "accounts:" << _nbAccounts << ";total:"
-		<< _totalAmount << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;;
-}
-
-
-void Account::displayStatus(void) const
-{
-    //index:0;amount:42;deposits:0;withdrawals:0
-    //_displayTimestamp();
-	std::cout << "index:" <<_accountIndex << ";amount:"
-		<< _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;;
-}
-
-void	Account::makeDeposit(int deposit)
-{
-	int	previous;
-
-	previous = _amount;
-	_amount += deposit;
-	this->_nbDeposits++;
-	//_displayTimestamp();
-	//index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
-	std::cout << "index:" << this->_accountIndex << ";p_amount:"
-		<< previous << ";deposit:" << deposit <<
-		";amount:" << this->_amount << ";nb_deposits:" << _nbDeposits << std::endl;
-}
-
-bool	Account::makeWithdrawal(int withdrawal)
-{
-	//[19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
-	int	previous;
-
-	previous = _amount;
-	if (withdrawal > _amount)
-	{
-		//_displayTimestamp();
-		std::cout << "index:" << this->_accountIndex << ";p_amount:"
-		<< previous << ";withdrawal:refused" << std::endl;
-		return false;
-	}
-	_amount -= withdrawal;
-	this->_nbWithdrawals++;
-	//_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";p_amount:"
-		<< previous << ";withdrawal:" << withdrawal <<
-		";amount:" << this->_amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
-	return true;
+	time(&timestamp);
+	strftime(buff, sizeof(buff), "%Y%m%d_%H%M%S", localtime(&timestamp));
+	std::cout << "[" << buff << "] ";
 }
