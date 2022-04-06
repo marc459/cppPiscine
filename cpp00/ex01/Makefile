@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/04/05 19:02:27 by msantos-         ###   ########.fr        #
+#    Updated: 2022/04/06 18:19:57 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = phonebook.cpp
+PROGRAM_SRCS = phonebook.cpp contactlist.cpp contact.cpp
 
 #OBJS
 PROGRAM_OBJS = $(addprefix $(OBJ_PATH)/,$(PROGRAM_SRCS:.cpp=.o))
