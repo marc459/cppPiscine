@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:26:49 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/06 18:03:11 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/07 20:50:08 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # define PHONEBOOK_H
 
 class  Phonebook {
-    public:
-    	private:
+
+    private:
 		Contact contacts[8];
 		int		nContacts;
 
