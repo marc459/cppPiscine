@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/07 17:13:20 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:10:19 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,9 @@ void    Phonebook::add(void)
     std::cout << "Darkest_secret" << std::endl;
     std::getline(std::cin, buff);
     this->contacts[this->nContacts].setDarkestsecret(buff);
-    if(this->nContacts < 7)
-        this->nContacts++;
+    this->nContacts++;
+    if(this->nContacts == 8)
+        this->nContacts = 0;
 }
 
 void    Phonebook::search()
@@ -64,7 +65,7 @@ void    Phonebook::search()
     std::string buff;
     int num;
     std::cout << "| Index      | First_name | Last_name  | Nickname   "<< std::endl;
-    for(int i = 0; i < this->nContacts ; i++)
+    for(int i = 0; i < 8 ; i++)
     {
         std::cout << "| " << i;
         writespaces(10);
