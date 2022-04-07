@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/07 16:58:48 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:13:20 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void    Phonebook::search()
 {
     std::string buff;
     int num;
-    std::cout << "| Index      " << "| First_name " << "| Last_name  " << "| Nickname   "<< std::endl;
+    std::cout << "| Index      | First_name | Last_name  | Nickname   "<< std::endl;
     for(int i = 0; i < this->nContacts ; i++)
     {
         std::cout << "| " << i;
@@ -75,14 +75,14 @@ void    Phonebook::search()
         std::cout << "| " << truncate(this->contacts[i].getNickName(),10) << std::endl;
         
     }
-    std::cout << "Who would you like to stalk?: " << std::endl;
+    std::cout << "Select a contact: " << std::endl;
     std::getline(std::cin, buff);
-    if(buff.size() > 1 || buff[0] < 48 || buff[0] > 55)
+    if(buff.size() > 2 || buff[0] < 48 || buff[0] > 55)
     	std::cout << "Not a valid value" << std::endl;
 	else
 	{
 		num = stoi(buff);
-		std::cout << "|   Name   | Lastname | Nickname |   Phone  |  Secret  |" << std::endl;
+        std::cout << "| First_name | Last_name  | Nickname   | Phone      | Secret     " << std::endl;
 		std::cout << "| " << truncate(this->contacts[num].getName(),10);
         writespaces(11 - this->contacts[num].getName().length());
         std::cout << "| " << truncate(this->contacts[num].getLastName(),10);
