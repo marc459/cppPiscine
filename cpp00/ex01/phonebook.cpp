@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/07 16:12:52 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:58:48 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void    Phonebook::search()
     }
     std::cout << "Who would you like to stalk?: " << std::endl;
     std::getline(std::cin, buff);
-    if(buff.size() > 1 || buff[0] < '0' || buff[0] > '8')
+    if(buff.size() > 1 || buff[0] < 48 || buff[0] > 55)
     	std::cout << "Not a valid value" << std::endl;
 	else
 	{
