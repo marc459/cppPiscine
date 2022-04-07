@@ -6,11 +6,16 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/06 18:36:03 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:12:52 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+
+Phonebook::Phonebook()
+{
+    
+}
 
 std::string truncate(std::string str, size_t width, bool show_ellipsis=true)
 {
@@ -32,19 +37,8 @@ void    writespaces(int nspaces)
     }
 }
 
-void    Phonebook::add()
+void    Phonebook::add(void)
 {
-
-		// void		setName(std::string name);
-		// std::string	getName(void);
-		// void		setLastname(std::string lastname);
-		// std::string	getLastname(void);
-		// void		setNickname(std::string nickname);
-		// std::string	getNickname(void);
-		// void		setPhone(std::string phone);
-		// std::string	getPhone(void);
-		// void		setDarkestsecret(std::string darkest_secret);
-		// std::string	getDarkestsecret(void);
     std::string buff;
     std::cout << "First Name" << std::endl;
     std::getline(std::cin, buff);
@@ -67,19 +61,38 @@ void    Phonebook::add()
 
 void    Phonebook::search()
 {
-    std::cout << "| First_name  ";
-    std::cout << "| Last_name  ";
-    std::cout << "| Nickname   ";
-    std::cout << "| Phone_num  " << std::endl;
+    std::string buff;
+    int num;
+    std::cout << "| Index      " << "| First_name " << "| Last_name  " << "| Nickname   "<< std::endl;
     for(int i = 0; i < this->nContacts ; i++)
     {
+        std::cout << "| " << i;
+        writespaces(10);
         std::cout << "| " << truncate(this->contacts[i].getName(),10);
         writespaces(11 - this->contacts[i].getName().length());
         std::cout << "| " << truncate(this->contacts[i].getLastName(),10);
         writespaces(11 - this->contacts[i].getLastName().length());
-        std::cout << "| " << truncate(this->contacts[i].getNickName(),10);
-        writespaces(11 - this->contacts[i].getNickName().length());
-        std::cout << "| " << truncate(this->contacts[i].getPhone(),10) << std::endl;
+        std::cout << "| " << truncate(this->contacts[i].getNickName(),10) << std::endl;
         
     }
+    std::cout << "Who would you like to stalk?: " << std::endl;
+    std::getline(std::cin, buff);
+    if(buff.size() > 1 || buff[0] < '0' || buff[0] > '8')
+    	std::cout << "Not a valid value" << std::endl;
+	else
+	{
+		num = stoi(buff);
+		std::cout << "|   Name   | Lastname | Nickname |   Phone  |  Secret  |" << std::endl;
+		std::cout << "| " << truncate(this->contacts[num].getName(),10);
+        writespaces(11 - this->contacts[num].getName().length());
+        std::cout << "| " << truncate(this->contacts[num].getLastName(),10);
+        writespaces(11 - this->contacts[num].getLastName().length());
+        std::cout << "| " << truncate(this->contacts[num].getNickName(),10);
+        writespaces(11 - this->contacts[num].getNickName().length());
+        std::cout << "| " << truncate(this->contacts[num].getPhone(),10);
+        writespaces(11 - this->contacts[num].getPhone().length());
+        std::cout << "| " << truncate(this->contacts[num].getDarkestsecret(),10) << std::endl;
+        
+	}
+
 }
