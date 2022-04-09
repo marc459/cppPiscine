@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/09 22:54:56 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/09 23:03:20 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,6 @@ Phonebook::Phonebook()
     
 }
 
-std::string truncate(std::string str, size_t width, bool show_ellipsis=true)
-{
-    if (str.length() > width)
-    {
-        if (show_ellipsis)
-            return str.substr(0, width) + ".";
-        else
-            return str.substr(0, width);
-    }
-    return str;
-}
-
-void    writespaces(int nspaces)
-{
-    for(int i = 0; i < nspaces; i++)
-    {
-        std::cout << " ";
-    }
-}
 
 void    Phonebook::add(void)
 {
@@ -79,14 +60,10 @@ void    Phonebook::search()
         num = this->nContacts;
     for(int i = 0; i < num; i++)
     {
-        //nwidth
-        std::cout << "| " << i;
-        writespaces(10);
-        std::cout << "| " << truncate(this->contacts[i].getName(),10);
-        writespaces(11 - this->contacts[i].getName().length());
-        std::cout << "| " << truncate(this->contacts[i].getLastName(),10);
-        writespaces(11 - this->contacts[i].getLastName().length());
-        std::cout << "| " << truncate(this->contacts[i].getNickName(),10) << std::endl;
+        std::cout << "|" << std::setw(10) << i << "|"
+		<< std::setw(10) << this->contacts[i].getName() << "|"
+		<< std::setw(10) << this->contacts[i].getLastName() << "|"
+		<< std::setw(10) << this->contacts[i].getNickName() << "|"<< std::endl;
         
     }
     std::cout << "Select a contact: " << std::endl;
@@ -97,15 +74,11 @@ void    Phonebook::search()
 	{
 		num = stoi(buff);
         std::cout << "| First_name | Last_name  | Nickname   | Phone      | Secret     " << std::endl;
-		std::cout << "| " << truncate(this->contacts[num].getName(),10);
-        writespaces(11 - this->contacts[num].getName().length());
-        std::cout << "| " << truncate(this->contacts[num].getLastName(),10);
-        writespaces(11 - this->contacts[num].getLastName().length());
-        std::cout << "| " << truncate(this->contacts[num].getNickName(),10);
-        writespaces(11 - this->contacts[num].getNickName().length());
-        std::cout << "| " << truncate(this->contacts[num].getPhone(),10);
-        writespaces(11 - this->contacts[num].getPhone().length());
-        std::cout << "| " << truncate(this->contacts[num].getDarkestsecret(),10) << std::endl;
+		std::cout << "|" << std::setw(10) << this->contacts[num].getName() 
+        << "|" << std::setw(10) << this->contacts[num].getLastName() << "|"
+        << std::setw(10) << this->contacts[num].getNickName() << "|"
+        << std::setw(10) << this->contacts[num].getPhone() << "|"
+        << std::setw(10) << this->contacts[num].getDarkestsecret() << "|" << std::endl;
         
 	}
 
