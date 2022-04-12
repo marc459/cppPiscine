@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   contactlist.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:53:13 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/07 15:38:16 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/12 12:18:10 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "phonebook.hpp"
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
 int     main(void)
 {

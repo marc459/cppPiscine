@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:23:51 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/06 18:35:41 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/12 12:18:56 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
-
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
 class Contact
 {
 	private:
