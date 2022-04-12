@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/12 17:42:47 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:43:22 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void    Phonebook::search()
         << " | Last_name: " << this->contacts[num].getLastName() << std::endl
         << " | Nickname: " << this->contacts[num].getNickName() << std::endl
         << " | Phone: " << this->contacts[num].getPhone() << std::endl
-        << " | Secret:" << this->contacts[num].getDarkestsecret() << "|" << std::endl;
+        << " | Secret: " << this->contacts[num].getDarkestsecret() << std::endl;
         
 	}
 
