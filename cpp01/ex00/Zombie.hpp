@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:04:33 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/16 21:08:27 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/17 19:52:41 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ class	Zombie
 
 		void	announce(void);
 };
-Zombie	*new_zombie(std::string name);
-Zombie	*randomChump(std::string name);
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
 #endif
