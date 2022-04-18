@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 20:22:20 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/24 15:19:16 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/18 11:58:08 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 int    main(int argc, char **argv)
 {
-    int karenlevel;
-    std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    
-    Karen karen;
+   
     if (argc != 2)
     {
         std::cout << "Needs more args" << std::endl;
         return (1);
 
     }
+    int karenlevel;
+    std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    
+    Karen karen;
     for (int i = 0; i < sizeof(levels)/sizeof(levels[0]);i++)
     {
         if(levels[i] == (std::string)argv[1])
