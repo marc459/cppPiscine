@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:54:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/12 13:57:18 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/12 17:43:22 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,28 +59,18 @@ void    Phonebook::add(void)
     std::string buff;
 	std::cout << "Name: ";
 	std::getline(std::cin, buff);
-	if (buff.length() > 10)
-		buff = buff.substr(0, 9) + ".";
 	this->contacts[this->nContacts % 8].setName(buff);
 	std::cout << "Last Name: ";
 	std::getline(std::cin, buff);
-	if (buff.length() > 10)
-		buff = buff.substr(0, 9) + ".";
 	this->contacts[this->nContacts % 8].setLastName(buff);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, buff);
-	if (buff.length() > 10)
-		buff = buff.substr(0, 9) + ".";
 	this->contacts[this->nContacts % 8].setNickName(buff);
 	std::cout << "Phone: ";
 	std::getline(std::cin, buff);
-	if (buff.length() > 10)
-		buff = buff.substr(0, 9) + ".";
 	this->contacts[this->nContacts % 8].setPhone(buff);
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, buff);
-	if (buff.length() > 10)
-		buff = buff.substr(0, 9) + ".";
 	this->contacts[this->nContacts % 8].setDarkestsecret(buff);
     this->nContacts++;
 }
@@ -98,10 +88,22 @@ void    Phonebook::search()
 	}
     for(int i = 0; i < num; i++)
     {
-        std::cout << "|" << std::setw(11) << i << " |"
-		<< std::setw(11) << this->contacts[i].getName() <<  " |"
-		<<  std::setw(11) << this->contacts[i].getLastName() << " |"
-		<< std::setw(11) << this->contacts[i].getNickName()  << " |"<< std::endl;
+        std::cout << "|" << std::setw(11) << i << " |";
+		if (this->contacts[i].getName().length() > 10)
+			buff = this->contacts[i].getName().substr(0, 9) + ".";
+		else
+			buff = this->contacts[i].getName();
+		std::cout <<  std::setw(11) << buff <<  " |";
+		if (this->contacts[i].getLastName().length() > 10)
+			buff = this->contacts[i].getLastName().substr(0, 9) + ".";
+		else
+			buff = this->contacts[i].getLastName();
+		std::cout <<  std::setw(11) << buff << " |";
+		if (this->contacts[i].getNickName().length() > 10)
+			buff = this->contacts[i].getNickName().substr(0, 9) + ".";
+		else
+			buff = this->contacts[i].getNickName();
+		std::cout <<  std::setw(11) << buff << " |" << std::endl;
         
     }
     std::cout << "Select a contact: " << std::endl;
@@ -115,12 +117,11 @@ void    Phonebook::search()
 	{
 		
 		num = this->ft_atoi(buff.c_str());
-        std::cout << "| First_name |  Last_name |   Nickname |      Phone |     Secret |" << std::endl;
-		std::cout << "|" << std::setw(11)  << this->contacts[num].getName() 
-        << " |" << std::setw(11) << this->contacts[num].getLastName()
-        << " |" << std::setw(11) << this->contacts[num].getNickName() 
-        << " |" << std::setw(11) << this->contacts[num].getPhone()
-        << " |" << std::setw(11) << this->contacts[num].getDarkestsecret() << "|" << std::endl;
+		std::cout << "| First_name: "  << this->contacts[num].getName() << std::endl
+        << " | Last_name: " << this->contacts[num].getLastName() << std::endl
+        << " | Nickname: " << this->contacts[num].getNickName() << std::endl
+        << " | Phone: " << this->contacts[num].getPhone() << std::endl
+        << " | Secret: " << this->contacts[num].getDarkestsecret() << std::endl;
         
 	}
 
