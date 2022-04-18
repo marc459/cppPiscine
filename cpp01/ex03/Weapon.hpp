@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:40:00 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/19 14:13:01 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/18 11:24:48 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Weapon{
         Weapon(std::string type);
         Weapon(void);
         ~Weapon(void);
-        const std::string &getType(void);
+        const std::string getType(void);
         void setType(std::string type);
 };
 #endif
