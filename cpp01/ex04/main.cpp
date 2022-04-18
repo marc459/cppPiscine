@@ -6,24 +6,40 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 20:22:20 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/18 11:49:29 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/18 12:23:48 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
 #include <iostream>
 #include <cctype>
-
+int     findOcurrences(std::string str, std::string substr)
+{
+    int i = 0;
+    int pos;
+    std::string tmp;
+    while(str.find(substr) != -1)
+    {
+        pos = str.find(substr);
+        tmp = str.substr(pos + 1,str.length());
+        str = tmp;
+        i++; 
+    }
+    return (i);
+}
 std::string   replace_line(std::string &line, std::string s1, std::string s2)
 {
     int pos;
+    int i = 0;
     std::string tmp;
-    while(line.find(s1) != -1)
+    while(i < findOcurrences(line,s1))
     {
         pos = line.find(s1);
         tmp = line.substr(0, pos) + s2 +  line.substr(pos + s1.length(), line.length());
         line = tmp;
+        i++;
     }
+    std::cout << line << std::endl;
     return (line);
 }
 
