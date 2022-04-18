@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:09:52 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/17 19:54:16 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/18 09:52:45 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int    main(int argc, char **argv)
 {
     
     Zombie *randzombie = newZombie("Zombie");
-    randomChump("randZombie");
+    randomChump("randChump");
     delete randzombie;
     return (0);
     

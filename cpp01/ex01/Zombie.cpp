@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 21:40:03 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/18 19:21:34 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/18 10:23:49 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ Zombie::~Zombie(void)
 void Zombie::announce(void)
 {
     std::cout << "BraiiiiiiinnnzzzZZ....." << std::endl;
-}
-
-Zombie	*new_zombie(std::string name)
-{
-    Zombie *newzombie = new Zombie(name);
-    return (newzombie);
 }
 
 void    Zombie::setName(std::string name)
