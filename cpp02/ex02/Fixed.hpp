@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:03 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/28 16:12:17 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/25 18:11:26 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ class Fixed{
         bool operator>= (const Fixed& fraction) const;
         bool operator== (const Fixed& fraction) const;
         bool operator!= (const Fixed& fraction) const;
-        void operator ++( void );
+        Fixed   operator++( int );
+        Fixed   &operator++( void );
+        Fixed   operator--( int );
+        Fixed   &operator--( void );
         
         Fixed& operator<< (const Fixed& fraction);
         Fixed &operator *(const Fixed &fixed) const;
@@ -49,10 +52,10 @@ class Fixed{
         Fixed &operator /(const Fixed &fixed) const;
         
 
-        Fixed &min(Fixed &fixed,  Fixed &fixed2);
-        const Fixed &min(const Fixed &fixed, const Fixed &fixed2);
-        Fixed &max(Fixed &fixed,  Fixed &fixed2);
-        const Fixed &max(const Fixed &fixed, const Fixed &fixed2);
+        static Fixed &min(Fixed &fixed,  Fixed &fixed2);
+        static const Fixed &min(const Fixed &fixed, const Fixed &fixed2);
+        static Fixed &max(Fixed &fixed,  Fixed &fixed2);
+        static const Fixed &max(const Fixed &fixed, const Fixed &fixed2);
         
 };
 

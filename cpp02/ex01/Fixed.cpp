@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/27 17:03:31 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/25 18:03:55 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed( void )
 {
@@ -33,7 +34,7 @@ Fixed::Fixed( const int value )
 Fixed::Fixed( const float value )
 {
     std::cout << "Float constructor called" << std::endl;
-	this->_value = (int)(value * (1 << this->fractbits));
+	this->_value = (static_cast<int>(roundf(value * (1 << this->fractbits))));
 }
 
 
@@ -65,12 +66,12 @@ int Fixed::getRawBits( void ) const
 
 float Fixed::toFloat( void ) const
 {
-    return (float)(_value / (float)(1 << this->fractbits));
+    return (static_cast<float>(_value) / static_cast<float>(1 << this->fractbits));
 }
 
 int Fixed::toInt( void ) const
 {
-    return (_value / (1 << this->fractbits));
+    return (static_cast<int>(_value / (1 << this->fractbits)));
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
