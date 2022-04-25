@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/25 18:37:33 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:11:27 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,27 @@
 
 Fixed::Fixed( void )
 {
-    std::cout << "Default constructor called" << std::endl;
     this->_value = 0;
 }
 
 Fixed::Fixed(const Fixed& copy)
 {
-    std::cout << "Copy constructor called" << std::endl;
     this->_value = copy.getRawBits();
 }
 
 Fixed::Fixed( const int value )
 {
-    std::cout << "Int constructor called" << std::endl;
 	this->_value = value << this->fractbits;
 }
 
 Fixed::Fixed( const float value )
 {
-    std::cout << "Float constructor called" << std::endl;
 	this->_value = (static_cast<int>(roundf(value * (1 << this->fractbits))));
 }
 
 
 Fixed::~Fixed( void )
 {
-    std::cout << "Destructor called" << std::endl;
 
 }
 
@@ -57,7 +52,6 @@ void Fixed::setRawBits( int const raw )
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return (this->_value);
 }
 
