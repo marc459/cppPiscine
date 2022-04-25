@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/25 18:31:14 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:37:33 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,38 +122,38 @@ bool Fixed::operator != (const Fixed& fixed) const
 }
 // ARITHMETIC OPERATORS
 
-Fixed &Fixed::operator * (const Fixed &fixed) const
+Fixed Fixed::operator * (const Fixed &fixed)
 {
-    Fixed *retFixed;
+    Fixed retFixed;
     float val;
     val = fixed._value * this->_value;
-    *retFixed = Fixed(val);
-    return(*retFixed);
+    retFixed = Fixed(val);
+    return(retFixed);
 }
 
-Fixed &Fixed::operator + (const Fixed &fixed) const
+Fixed Fixed::operator + (const Fixed &fixed)
 {
-    Fixed *retFixed;
+    Fixed retFixed;
     float val;
     val = fixed._value + this->_value;
-    *retFixed = Fixed(val);
-    return(*retFixed);
+    retFixed = Fixed(val);
+    return(retFixed);
 }
-Fixed &Fixed::operator - (const Fixed &fixed) const
+Fixed Fixed::operator - (const Fixed &fixed)
 {
-    Fixed *retFixed;
+    Fixed retFixed;
     float val;
     val = fixed._value- this->_value;
-    *retFixed = Fixed(val);
-    return(*retFixed);
+    retFixed = Fixed(val);
+    return(retFixed);
 }
-Fixed &Fixed::operator / (const Fixed &fixed) const
+Fixed Fixed::operator / (const Fixed &fixed)
 {
-    Fixed *retFixed;
+    Fixed retFixed;
     float val;
     val = fixed._value / this->_value;
-    *retFixed = Fixed(val);
-    return(*retFixed);
+    retFixed = Fixed(val);
+    return(retFixed);
 }
 
 // INCREMENT/DECREMENT 

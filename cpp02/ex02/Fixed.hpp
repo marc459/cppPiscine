@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:03 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/25 18:11:26 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:35:49 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ class Fixed{
         Fixed   operator--( int );
         Fixed   &operator--( void );
         
-        Fixed& operator<< (const Fixed& fraction);
-        Fixed &operator *(const Fixed &fixed) const;
-        Fixed &operator +(const Fixed &fixed) const;
-        Fixed &operator -(const Fixed &fixed) const;
-        Fixed &operator /(const Fixed &fixed) const;
+        Fixed operator<< (const Fixed& fraction);
+        Fixed operator *(const Fixed &fixed);
+        Fixed operator +(const Fixed &fixed);
+        Fixed operator -(const Fixed &fixed);
+        Fixed operator /(const Fixed &fixed);
         
 
         static Fixed &min(Fixed &fixed,  Fixed &fixed2);
