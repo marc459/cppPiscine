@@ -6,16 +6,15 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/02/27 17:03:42 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/19 12:07:48 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void )
+Fixed::Fixed( void ): _value(0)
 {
     std::cout << "Default constructor called" << std::endl;
-    this->_value = 0;
 }
 
 Fixed::Fixed(const Fixed& copy)

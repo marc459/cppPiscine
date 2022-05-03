@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:16:27 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/03 15:45:20 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/03 14:22:58 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ DiamondTrap::DiamondTrap( void )
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name) , FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name)
 {
 	std::cout << "DiamondTrap Constructor called" << std::endl;
+    DiamondTrap::name = name;
+    ClapTrap::name = name + "_clap_name";
+    this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = ScavTrap::energyPoints;
+	this->attackDamage = FragTrap::attackDamage;
 }
 
 DiamondTrap::~DiamondTrap( void )
@@ -35,7 +40,12 @@ DiamondTrap::DiamondTrap(const DiamondTrap &copy)
     this->setName(copy.getName());
 }
 
+void	DiamondTrap::attack(const std::string &target)
+{
+	ScavTrap::attack(target);
+}
+
 void DiamondTrap::whoAmI(void)
 {
-    std::cout << "I am claptrap "<< this->getName() << "and myDiamondTrap name "<< this->name << std::endl;
+    std::cout << "I am claptrap "<< this->ClapTrap::getName() << " and myDiamondTrap name is "<< this->name << std::endl;
 }

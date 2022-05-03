@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:16:30 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/03 14:38:11 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/03 14:19:30 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap{
     private:
-        
         std::string name;
     public:
         DiamondTrap( void );
@@ -27,6 +26,7 @@ class DiamondTrap : public ScavTrap, public FragTrap{
         DiamondTrap(const DiamondTrap &copy);
         DiamondTrap &operator = (const DiamondTrap &ct);
 
+        void attack( std::string const &target );
         void whoAmI(void);
     
 };

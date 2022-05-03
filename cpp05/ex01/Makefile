@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
+#    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/03/09 19:31:53 by msantos-         ###   ########.fr        #
+#    Updated: 2022/05/03 13:32:40 by marcos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,12 +35,11 @@ CXXFLAGS = #-Wall -Werror -Wextra
 all: $(PROGRAM)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
-	@mkdir -p $(OBJ_PATH) 2> /dev/null || true
-	@$(CXX) -o $@ -c $^
+	mkdir -p $(OBJ_PATH) 2> /dev/null || true
+	$(CXX) -o $@ -c $^
 
 $(PROGRAM): $(PROGRAM_OBJS)
-	@$(CXX) $(CXXFLAGS) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)
-
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)
 clean:
 		@rm -rf $(OBJ_PATH)
 
