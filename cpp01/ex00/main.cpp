@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:09:52 by msantos-          #+#    #+#             */
-/*   Updated: 2022/04/18 09:52:45 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/25 18:21:16 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
 #include "Zombie.hpp"
-using namespace std;
 
 int    main(int argc, char **argv)
 {

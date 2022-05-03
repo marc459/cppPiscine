@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:05 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/02 14:40:30 by marcos           ###   ########.fr       */
+/*   Updated: 2022/04/24 21:56:34 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
 class ClapTrap{
-    private:
+    protected:
         std::string name;
         int hitPoints;
         int energyPoints;
@@ -27,7 +27,7 @@ class ClapTrap{
     public:
         ClapTrap( void );
         ClapTrap(std::string name);
-        ~ClapTrap( void );
+        virtual ~ClapTrap( void );
         ClapTrap(const ClapTrap &copy);
         ClapTrap &operator = (const ClapTrap &ct);
 
