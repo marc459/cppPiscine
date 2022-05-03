@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:27:12 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/25 18:23:07 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/05/03 12:14:08 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 int main( void )
 {
 	Fixed	a;
-	std::cout << "a" << std::endl;
+
 	Fixed	const b(Fixed(5.05f) * Fixed(2));
-	
 	Fixed	const c(Fixed(2.25f) + Fixed(2));
 	Fixed	const d(Fixed(5.0f) / Fixed(2));
 	Fixed	const e(Fixed(4) - Fixed(3.34f));

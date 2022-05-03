@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:01:06 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/25 18:03:55 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/05/03 13:27:26 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ Fixed::Fixed( const int value )
 	this->_value = value << this->fractbits;
 }
 
+// To convert from floating-point to fixed-point, we follow this algorithm:
+// Calculate x = floating_input * 2^(fractional_bits)  256
+//Round x to the nearest whole number (e.g. round(x))
+//store it in int value
+//Now, if “N is left-shifted by 2” i.e N=N<<8 then N will become N=N*(2^8).
+//Thus, N=22*(2^2)=88 which can be writen as 01011000.
 Fixed::Fixed( const float value )
 {
     std::cout << "Float constructor called" << std::endl;
