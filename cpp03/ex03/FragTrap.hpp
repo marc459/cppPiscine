@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:34:07 by marcos            #+#    #+#             */
-/*   Updated: 2022/04/24 21:57:29 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/05/03 13:59:15 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class FragTrap : virtual public ClapTrap{
         FragTrap(const FragTrap &copy);
         FragTrap &operator = (const FragTrap &ct);
 
+        void attack( std::string const &target );
         void highFivesGuys(void);
     
 };

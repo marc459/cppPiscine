@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/02 14:41:08 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/03 13:57:57 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int    main(int argc, char **argv)
 	std::cout << clap.getEnergyPoints()<< std::endl;
 	clap.attack("antonio");
 	clap2.attack("antonio");
-	clap.takeDamage(3);
-	clap.beRepaired(5);
+	clap3.attack("antonia");
+	clap3.takeDamage(3);
+	clap3.beRepaired(5);
 	clap2.guardGate();
 	clap3.highFivesGuys();
 	return 0;
