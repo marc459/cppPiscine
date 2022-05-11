@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
+#    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/05/03 12:14:44 by marcos           ###   ########.fr        #
+#    Updated: 2022/05/11 13:26:31 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all: $(PROGRAM)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
 	mkdir -p $(OBJ_PATH) 2> /dev/null || true
-	$(CXX) -o $@ -c $^
+	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
 $(PROGRAM): $(PROGRAM_OBJS)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)

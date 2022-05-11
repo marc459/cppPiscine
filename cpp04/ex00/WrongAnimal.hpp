@@ -29,7 +29,7 @@ class WrongAnimal{
         WrongAnimal(const WrongAnimal &WrongAnimal);
         WrongAnimal &operator =( const WrongAnimal &WrongAnimal );
 
-        virtual void makeSound( void )const;
+       void makeSound( void )const;
         
         std::string getType() const;
         void setType(std::string type);

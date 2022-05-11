@@ -39,6 +39,7 @@ WrongAnimal &WrongAnimal::operator =( const WrongAnimal &WrongAnimal )
 
 void WrongAnimal::makeSound( void ) const
 {
+    std::cout << "Unrecgnizable Sounds" << std::endl;
 }
     
 std::string WrongAnimal::getType() const
