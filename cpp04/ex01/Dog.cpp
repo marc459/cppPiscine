@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:35:57 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 19:59:40 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:44:37 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,27 @@ Dog::Dog(const Dog &copy)
 {
     std::cout << "Copy Constructor main called" << std::endl;
     this->setType(copy.getType());
+    *this->brain = *copy.brain;
 }
 Dog &Dog::operator =( const Dog &dog )
 {
     std::cout << "Assignation operator called" << std::endl;
     this->setType(dog.getType());
+    *this->brain = *dog.brain;
     return (*this);
 }
 
 void Dog::makeSound( void ) const
 {
     std::cout << "GUAUUUUUUU!!!" << std::endl;
+}
+
+Brain	*Dog::getBrain(void) const
+{
+    return this->brain;
+    
+}
+void	Dog::setBrain(Brain *brain)
+{
+    this->brain = brain;
 }

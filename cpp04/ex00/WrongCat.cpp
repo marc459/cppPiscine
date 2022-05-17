@@ -18,7 +18,7 @@ WrongCat::WrongCat( void ) : WrongAnimal("WrongCat")
 }
 WrongCat::~WrongCat( void )
 {
-    std::cout << "Destructor main called" << std::endl;
+    std::cout << "WrongCat desructor called" << std::endl;
 }
 WrongCat::WrongCat(const WrongCat &copy)
 {

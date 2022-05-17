@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:35:57 by marcos            #+#    #+#             */
-/*   Updated: 2022/05/11 12:56:00 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/05/17 15:28:48 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog( void ) : Animal("Dog")
 }
 Dog::~Dog( void )
 {
-    std::cout << "Destructor main called" << std::endl;
+    std::cout << "Dog destructor called" << std::endl;
 }
 Dog::Dog(const Dog &copy)
 {

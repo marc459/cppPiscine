@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:30:30 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 19:59:50 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:45:07 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,26 @@ Cat::Cat(const Cat &copy)
 {
     std::cout << "Copy Constructor main called" << std::endl;
     this->type = copy.type;
+    *this->brain = *copy.brain;
 }
 Cat &Cat::operator =( const Cat &cat )
 {
     std::cout << "Assignation operator called" << std::endl;
     this->setType(cat.getType());
+    *this->brain = *cat.brain;
     return (*this);
 }
 
 void Cat::makeSound( void ) const
 {
     std::cout << "MIAUUUUUU" << std::endl;
+}
+Brain	*Cat::getBrain(void) const
+{
+    return this->brain;
+    
+}
+void	Cat::setBrain(Brain *brain)
+{
+    this->brain = brain;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:30:35 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 18:03:42 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:43:20 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ class Cat:public Animal{
         Cat &operator =( const Cat &cat );
 
         void makeSound( void ) const;
+        Brain	*getBrain(void) const;
+		void	setBrain(Brain *brain);
 };
 #endif

@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/05/11 13:26:31 by msantos-         ###   ########.fr        #
+#    Updated: 2022/05/17 14:50:50 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ PROGRAM_SRCS = main.cpp Bureaucrat.cpp Form.cpp
 PROGRAM_OBJS = $(addprefix $(OBJ_PATH)/,$(PROGRAM_SRCS:.cpp=.o))
 
 #FLAGS
-CXX = clang++ --std=c++98 # -Wall -Werror -Wextra
+CXX = clang++
 #clang 
-CXXFLAGS = #-Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 #INSTRUCTIONS
 all: $(PROGRAM)
@@ -39,7 +39,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
 $(PROGRAM): $(PROGRAM_OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)
+	$(CXX) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)
 clean:
 		@rm -rf $(OBJ_PATH)
 

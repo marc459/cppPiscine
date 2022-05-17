@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:30:30 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/04 20:23:24 by marcos           ###   ########.fr       */
+/*   Updated: 2022/05/17 14:55:28 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat( void ) : Animal("Cat")
 }
 Cat::~Cat( void )
 {
-    std::cout << "Destructor main called" << std::endl;
+    std::cout << "Cat destructor called" << std::endl;
 }
 Cat::Cat(const Cat &copy)
 {

@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/05/11 13:27:28 by msantos-         ###   ########.fr        #
+#    Updated: 2022/05/17 14:49:43 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
 $(PROGRAM): $(PROGRAM_OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)
+	$(CXX) $(INCLUDES) $(PROGRAM_OBJS) -o $(PROGRAM)
 clean:
 		@rm -rf $(OBJ_PATH)
 
