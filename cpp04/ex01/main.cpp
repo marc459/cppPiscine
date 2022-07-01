@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/05/27 13:03:00 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:29:22 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int main()
 		delete animalarray[i];
 	
 	std::cout << std::endl << std::endl << std::endl; 
-
 	
 	{
 		//DEEP COPY BRAIN
@@ -65,8 +64,8 @@ int main()
 		std::cout << "BasicdogBrain changed ideas:(ihaveanidea) " << basic->getBrain()->getIdeas()[0] << std::endl;
 		delete basic;
 	}
-
-	/*std::cout << std::endl << std::endl << std::endl; 
+/*
+	std::cout << std::endl << std::endl << std::endl; 
 	{
 		Dog basic;
 		std::string ideas[100];
