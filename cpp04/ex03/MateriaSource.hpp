@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 15:05:24 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/06 17:39:57 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/05 21:50:08 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 class MateriaSource: public IMateriaSource
 {
     private:
-        AMateria *inventory[4];
-        int nmaterias;
+        bool    ice;
+        bool    cure;
     public:
         MateriaSource( void );
         ~MateriaSource();

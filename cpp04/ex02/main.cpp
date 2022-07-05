@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 12:37:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/05/27 12:51:35 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:07:38 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main()
 {
 	const Animal* j = new Dog();
-	const Animal* i = new Animal();
+	//const Animal* i = new Animal();
    // i->makeSound();
     
     delete j;

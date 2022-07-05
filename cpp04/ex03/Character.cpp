@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:45:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/07 18:10:51 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/05 19:45:34 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 Character::Character( void ):  name(""), nequip(0)
 {
-    std::cout << "Character Constructor main called" << std::endl;
+
     inventory[0] = NULL;
     inventory[1] = NULL;
     inventory[2] = NULL;
@@ -27,7 +27,7 @@ Character::Character( void ):  name(""), nequip(0)
 
 Character::Character( std::string name ): nequip(0)
 {
-    std::cout << "Character Constructor called" << std::endl;
+
     inventory[0] = NULL;
     inventory[1] = NULL;
     inventory[2] = NULL;
@@ -38,16 +38,19 @@ Character::Character( std::string name ): nequip(0)
 
 Character::~Character( void )
 {
-    std::cout << "Character Destructor main called" << std::endl;
+    for (int i = 0; i < 4; i++)
+		delete this->inventory[i];
 }
 Character::Character(const Character &copy)
 {
-    std::cout << "Copy Constructor main called" << std::endl;
+
+    for (int i = 0; i < 4; i++)
+        this->inventory[i] = copy.inventory[i];
     this->name = copy.name;
 }
 Character &Character::operator =( const Character &character )
 {
-    std::cout << "Assignation operator called" << std::endl;
+
     this->name = character.name;
     return (*this);
 }
@@ -67,10 +70,13 @@ void Character::setName(std::string name)
 void Character::equip(AMateria* m)
 {
 	if (this->nequip < 4)
-		this->inventory[this->nequip] = m;
+    {
+        this->nequip++;
+        this->inventory[this->nequip] = m;
+    }
 	else
 		std::cout << "Nothing else can be equiped" << std::endl;
-	this->nequip++;
+	
 }
 
 void Character::unequip(int idx)
@@ -80,5 +86,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	this->inventory[idx]->use(target);
+    if(inventory[idx])
+	    this->inventory[idx]->use(target);
 }

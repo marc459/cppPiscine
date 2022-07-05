@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:30:30 by marcos            #+#    #+#             */
-/*   Updated: 2022/05/17 16:32:12 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:57:42 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Cat &Cat::operator =( const Cat &cat )
 {
     std::cout << "Assignation operator called" << std::endl;
     this->setType(cat.getType());
-    *(this->brain) = *(cat.brain);
+    this->brain = new Brain();
     return (*this);
 }
 
