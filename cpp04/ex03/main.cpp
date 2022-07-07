@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/05 19:30:12 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:23:32 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ tmp = src->createMateria("cure");
 me->equip(tmp);
 ICharacter* bob = new Character("bob");
 me->use(0, *bob);
-me->use(17, *bob);
+me->use(1, *bob);
 delete bob;
 delete me;
 delete src;

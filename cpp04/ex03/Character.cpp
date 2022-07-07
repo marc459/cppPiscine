@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:45:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/05 19:45:34 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/07 21:04:49 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,9 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
+
+        //std::cout << idx << "";
+
     if(inventory[idx])
 	    this->inventory[idx]->use(target);
 }

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:51:29 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/05 19:40:21 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:22:33 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ void AMateria::use(ICharacter& target)
 {
     std::cout << "Using unknown materia" <<  std::endl;
     target.getName();
+}
+std::string const &AMateria::getType() const
+{
+    return this->type;
 }

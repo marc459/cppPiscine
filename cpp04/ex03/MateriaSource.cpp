@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 15:07:21 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/07 19:57:52 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:19:51 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void MateriaSource::learnMateria(AMateria *amateria)
 
 AMateria* MateriaSource::createMateria(std::string const &type)
 {
-    for (size_t i = 0; i < 4; i++)
-		if (inventory[i]->getType() == type)
+    for (int i = 0; i < this->nmaterias; i++)
+		if (inventory[i]->getType().compare(type))
 			return (inventory[i]->clone());
 	return 0;
 
