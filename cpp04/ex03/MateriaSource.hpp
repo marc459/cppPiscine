@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 15:05:24 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/05 21:50:08 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/07 18:52:11 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 class MateriaSource: public IMateriaSource
 {
     private:
-        bool    ice;
-        bool    cure;
+        AMateria *inventory[4];
+        int nmaterias;
     public:
         MateriaSource( void );
         ~MateriaSource();
