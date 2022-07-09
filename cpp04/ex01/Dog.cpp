@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:35:57 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 16:22:04 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 18:08:56 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Dog &Dog::operator =( const Dog &dog )
 {
     std::cout << "Assignation operator called" << std::endl;
     this->setType(dog.getType());
+    delete this->brain;
     this->brain = new Brain();
     *this->brain = *dog.brain;
     return (*this);

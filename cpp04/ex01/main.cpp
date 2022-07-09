@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 16:37:55 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 18:11:04 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,24 @@ int main()
 	{
 		//DEEP COPY BRAIN
 		Dog dog1;
-		Dog deepcopydog;
+		
 
 		std::string ideas[100];
 		ideas[0] = "NOIDEA";
 		
 		dog1.getBrain()->setIdeas(ideas);
-		deepcopydog=dog1;
+		
+		Dog deepcopydog = Dog(dog1);
+		
+		
 		ideas[0] = "IDEA";
+		
 		dog1.getBrain()->setIdeas(ideas);
+		
 		std::cout << dog1.getBrain()->getIdeas()[0] << std::endl;
 		std::cout << deepcopydog.getBrain()->getIdeas()[0] << std::endl;
+		
 	}
-
 	
 	
 	return (0);
