@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 12:40:55 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 13:24:42 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main()
 		brainbuff->setIdeas(ideas); // no idea brain
 		
 		basic->setBrain(brainbuff);
-
+		//system("leaks ex01");
 		Dog *deepcopydog = basic;
 		
 		std::cout << "DeepCopyBrain:(noidea) " << deepcopydog->getBrain()->getIdeas()[0] << std::endl;

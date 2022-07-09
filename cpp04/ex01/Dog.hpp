@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:34:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/05/17 15:43:13 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 12:43:59 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog:public Animal{
 
     public:
         Dog( void );
-        ~Dog( void );
+        virtual ~Dog( void );
         Dog(const Dog &Dog);
         Dog &operator =( const Dog &dog );
 
