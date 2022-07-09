@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:59:20 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/05 19:39:14 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/09 16:24:49 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,5 @@ void Brain::setIdeas(const std::string *ideas)
     for(int i = 0;i < 100;i++)
     {
         this->ideas[i] = ideas[i];
-    }
-    
-    
+    } 
 }
