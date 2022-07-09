@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:59:20 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 13:23:38 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 16:14:31 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,10 @@ const std::string *Brain::getIdeas() const
 
 void Brain::setIdeas(const std::string *ideas)
 {
-    
+
     for(int i = 0;i < 100;i++)
     {
         this->ideas[i] = ideas[i];
     }
-    
     
 }

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:30:30 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 11:31:37 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 16:21:50 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,15 @@ Cat::Cat(const Cat &copy)
     std::cout << "Copy Constructor main called" << std::endl;
     this->type = copy.type;
     this->brain = new Brain();
+    *this->brain = Brain(*copy.brain);
+    
 }
 Cat &Cat::operator =( const Cat &cat )
 {
     std::cout << "Assignation operator called" << std::endl;
     this->setType(cat.getType());
     this->brain = new Brain();
+    *this->brain = *cat.brain;
     return (*this);
 }
 

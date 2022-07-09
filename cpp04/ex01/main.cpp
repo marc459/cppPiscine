@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 13:24:42 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 16:21:22 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,29 +44,16 @@ int main()
 	
 	{
 		//DEEP COPY BRAIN
-		Dog *basic = new Dog();
-		std::string ideas[100];
-		std::string noidea = "noidea";
-		for (int i = 0; i < 100; i++)
-			ideas[i] = noidea;
-		
-		Brain *brainbuff = new Brain();
-		brainbuff->setIdeas(ideas); // no idea brain
-		
-		basic->setBrain(brainbuff);
-		//system("leaks ex01");
-		Dog *deepcopydog = basic;
-		
-		std::cout << "DeepCopyBrain:(noidea) " << deepcopydog->getBrain()->getIdeas()[0] << std::endl;
-		noidea = "ihaveanidea";
-		for (int i = 0; i < 100; i++)
-			ideas[i] = noidea;
-		brainbuff->setIdeas(ideas);
-		basic->setBrain(brainbuff);
-		
-		std::cout << "DeepCopyBrain changed ideas:(noidea) " << deepcopydog->getBrain()->getIdeas()[0] << std::endl;
-		std::cout << "BasicdogBrain changed ideas:(ihaveanidea) " << basic->getBrain()->getIdeas()[0] << std::endl;
-		delete basic;
+			Dog dog1;
+		Dog dog2;
+
+		dog1.brain->ideas[0] ="noidea";
+		dog2=dog1;
+		dog1.brain->ideas[0] ="idea";
+		std::cout << dog2.brain->ideas[0] << std::endl;
 	}
+
+	
+	
 	return (0);
 }
