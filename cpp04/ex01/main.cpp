@@ -6,17 +6,14 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/09 12:38:50 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 12:40:55 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "stdlib.h"
-void lea()
-{
-	system("leaks ex01");
-}
+
 int main()
 {
 	const Animal* j = new Dog();
@@ -29,7 +26,6 @@ int main()
 
 	delete i;
 	delete j;
-	//atexit(lea);
 	
 	std::cout << std::endl << std::endl << std::endl;
 	Animal *animalarray[10];
