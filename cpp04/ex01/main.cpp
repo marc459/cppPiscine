@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/01 16:29:22 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 11:42:13 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ int main()
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	delete j;
+
 	delete i;
+	delete j;
+
 	
-	std::cout << std::endl << std::endl << std::endl; 
+	std::cout << std::endl << std::endl << std::endl;
 	Animal *animalarray[10];
 	for(int i = 0;i < 5;i++)
 		animalarray[i] = new Dog();
@@ -38,7 +40,7 @@ int main()
 	for(int i = 0;i < 10;i++)
 		delete animalarray[i];
 	
-	std::cout << std::endl << std::endl << std::endl; 
+	std::cout << std::endl << std::endl << std::endl << "DEEP COPY BRAIN " << std::endl  << std::endl; 
 	
 	{
 		//DEEP COPY BRAIN
@@ -64,23 +66,5 @@ int main()
 		std::cout << "BasicdogBrain changed ideas:(ihaveanidea) " << basic->getBrain()->getIdeas()[0] << std::endl;
 		delete basic;
 	}
-/*
-	std::cout << std::endl << std::endl << std::endl; 
-	{
-		Dog basic;
-		std::string ideas[100];
-
-		std::string noidea = "noidea";
-		for (int i = 0; i < 100; i++)
-			ideas[i] = noidea;
-		
-		Brain *brainbuff = new Brain();
-		brainbuff->setIdeas(ideas);
-		
-		basic.setBrain(brainbuff);
-		Dog tmp = basic;
-		std::cout << tmp.getBrain()->getIdeas()[0] << std::endl;
-	}*/
-
 	return (0);
 }

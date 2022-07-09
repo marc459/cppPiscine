@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:30:30 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/01 16:57:42 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 11:31:37 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat::Cat(const Cat &copy)
 {
     std::cout << "Copy Constructor main called" << std::endl;
     this->type = copy.type;
-    *(this->brain) = *(copy.brain);
+    this->brain = new Brain();
 }
 Cat &Cat::operator =( const Cat &cat )
 {

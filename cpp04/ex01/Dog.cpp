@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:35:57 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/01 16:56:44 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 11:33:28 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::Dog(const Dog &copy)
 {
     std::cout << "Copy Constructor main called" << std::endl;
     this->setType(copy.getType());
-    *(this->brain) = *(copy.brain);
+    this->brain = new Brain();
 }
 Dog &Dog::operator =( const Dog &dog )
 {
