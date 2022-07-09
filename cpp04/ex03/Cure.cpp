@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:44:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/05 19:40:35 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 10:12:33 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Cure &Cure::operator =( const Cure &cure )
 }
 
 AMateria* Cure::clone() const{
-    return (new Cure(*this));
+    return (new Cure());
 }
 
 void Cure::use(ICharacter& target)

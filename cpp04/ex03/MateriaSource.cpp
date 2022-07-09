@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 15:07:21 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/07 20:19:51 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 10:28:54 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 MateriaSource::MateriaSource( void ): nmaterias(0)
 {
     for (size_t i = 0; i < 4; i++)
-		inventory[i] = NULL;
+		  inventory[i] = NULL;
 
 }
 
 MateriaSource::~MateriaSource( void )
 {
     for (size_t i = 0; i < 4; i++)
-		delete inventory[i];
+		  delete inventory[i];
 
 }
 MateriaSource::MateriaSource(const MateriaSource &copy)
@@ -47,19 +47,23 @@ MateriaSource &MateriaSource::operator =( const MateriaSource &materiasrc)
 
 void MateriaSource::learnMateria(AMateria *amateria)
 {
-    if(this->nmaterias < 4)
+  if(this->nmaterias < 4)
+  {
 		this->inventory[this->nmaterias] = amateria;
+    
+    this->nmaterias++;
+  }
 	else
 		std::cout << "Materias is full" << std::endl;
-	this->nmaterias++;
-
 }
 
 AMateria* MateriaSource::createMateria(std::string const &type)
 {
     for (int i = 0; i < this->nmaterias; i++)
-		if (inventory[i]->getType().compare(type))
-			return (inventory[i]->clone());
+    {
+      if (inventory[i]->getType().compare(type))
+        return (inventory[i]->clone()); 
+    }
 	return 0;
 
 }

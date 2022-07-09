@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:45:18 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/07 21:04:49 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 10:29:47 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ void Character::equip(AMateria* m)
 {
 	if (this->nequip < 4)
     {
-        this->nequip++;
         this->inventory[this->nequip] = m;
+        this->nequip++;
     }
 	else
 		std::cout << "Nothing else can be equiped" << std::endl;
@@ -86,9 +86,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-
-        //std::cout << idx << "";
-
     if(inventory[idx])
 	    this->inventory[idx]->use(target);
 }

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:09:24 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/05 19:40:55 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/09 10:12:16 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Ice &Ice::operator =( const Ice &ice )
 }
 
 AMateria* Ice::clone() const{
-    return (new Ice(*this));
+    return (new Ice());
 }
 
 void Ice::use(ICharacter& target)
