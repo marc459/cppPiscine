@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:31 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/08 14:49:25 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/12 14:34:18 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,22 @@ const char *Bureaucrat::gradeTooHighException::what() const throw() {
 
 const char *Bureaucrat::gradeTooLowException::what() const throw() {
 	return "Grade too low";
+}
+
+std::string Bureaucrat::getName() const
+{
+    return this->name;
+}
+void Bureaucrat::setName(std::string name)
+{
+    this->name = name;
+}
+
+int Bureaucrat::getGrade() const
+{
+    return this->grade;
+}
+void Bureaucrat::setGrade(int grade)
+{
+    this->grade = grade;
 }

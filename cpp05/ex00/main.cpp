@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/08 14:48:53 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/12 14:35:14 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-    Bureaucrat *b = new Bureaucrat("Federico",155);
+    Bureaucrat *b = new Bureaucrat("Federico",1);
     
         b->IncrementGrade();
     }

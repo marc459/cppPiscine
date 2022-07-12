@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:35 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/08 14:38:25 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/12 14:34:35 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,11 @@ class Bureaucrat{
         void IncrementGrade();
         void DecrementGrade();
 
-        std::string getName() const
-        {
-            return this->name;
-        }
-        void setName(std::string name)
-        {
-            this->name = name;
-        }
+        std::string getName() const;
+        void setName(std::string name);
 
-        int getGrade() const
-        {
-            return this->grade;
-        }
-        void setGrade(int grade)
-        {
-            this->grade = grade;
-        }
+        int getGrade() const;
+        void setGrade(int grade);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
