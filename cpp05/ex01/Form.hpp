@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:58:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/03/09 19:31:01 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/12 17:43:24 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class Bureaucrat;
 class Form{
     private:
-    std::string name;
+        const std::string name;
         bool isSigned;
-        int gradeSigned;
-        int gradeExec;
+        const int gradeSigned;
+        const int gradeExec;
 
     public:
         Form(const std::string name, int gradeSigned, int gradeExec);
@@ -42,38 +42,16 @@ class Form{
                 virtual const char* what() const throw();
         };
 
-        bool getisSigned() const {
-            return this->isSigned;
-        }
+        bool getisSigned() const;
 
-        void setIsSigned(bool isSigned) {
-            this->isSigned = isSigned;
-        }
+        void setIsSigned(bool isSigned);
 
-        std::string getName() const {
-            return this->name;
-        }
+        std::string getName() const;
 
-        void setName(std::string name) {
-            this->name = name;
-        }
 
-        int getGradeSigned() const {
-            return this->gradeSigned;
-        }
+        int getGradeSigned() const;
+        int getGradeExec() const;
 
-        void setGradeSigned(int gradeSigned) {
-            this->gradeSigned = gradeSigned;
-        }
-
-        int getGradeExec() const {
-            return this->gradeExec;
-        }
-
-        void setGradeExec(int gradeExec) {
-            this->gradeExec = gradeExec;
-        }
-        
 };
 /*std::ostream& operator<<(std::ostream& os, const Form& b)
 {

@@ -6,13 +6,13 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 19:20:54 by msantos-          #+#    #+#             */
-/*   Updated: 2022/03/09 19:23:07 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/12 17:47:18 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(const std::string name, int gradeSigned, int gradeExec): isSigned(false)
+Form::Form(const std::string name, int gradeSigned, int gradeExec):   name(name), isSigned(false), gradeSigned(gradeSigned), gradeExec(gradeExec)
 {
     if(gradeSigned > 150 || gradeExec > 150)
         throw Form::gradeTooLowException();
@@ -20,19 +20,12 @@ Form::Form(const std::string name, int gradeSigned, int gradeExec): isSigned(fal
         throw Form::gradeTooHighException();
     else{
         std::cout << "Form constructor called" << std::endl;
-        this->setName(name);
-        this->setGradeSigned(gradeSigned);
-        this->setGradeExec(gradeExec);
     }
 }
 
-Form::Form(const Form &copy)
+Form::Form(const Form &copy): name(copy.name),isSigned(copy.isSigned), gradeSigned(copy.gradeSigned), gradeExec(copy.gradeExec)
 {
     std::cout << "Form copy constructor called" << std::endl;
-    this->setName(copy.getName());
-    this->setGradeSigned(copy.getGradeSigned());
-    this->setGradeExec(copy.getGradeExec());
-    this->setIsSigned(copy.getisSigned());
 }
 
 Form::~Form(void)
@@ -43,10 +36,7 @@ Form::~Form(void)
 Form &Form::operator=(const Form &op)
 {
     std::cout << "Form Assigment operator called" << std::endl;
-    this->setName(op.getName());
-    this->setGradeSigned(op.getGradeSigned());
-    this->setGradeExec(op.getGradeExec());
-    this->setIsSigned(op.getisSigned());
+    this->isSigned = op.getisSigned();
     return (*this);
 }
 
@@ -70,4 +60,25 @@ const char *Form::gradeTooHighException::what() const throw() {
 
 const char *Form::gradeTooLowException::what() const throw() {
 	return "Grade too low";
+}
+
+bool Form::getisSigned() const {
+    return this->isSigned;
+}
+
+void Form::setIsSigned(bool isSigned) {
+    this->isSigned = isSigned;
+}
+
+std::string Form::getName() const {
+    return this->name;
+}
+
+
+int Form::getGradeSigned() const {
+    return this->gradeSigned;
+}
+
+int Form::getGradeExec() const {
+    return this->gradeExec;
 }
