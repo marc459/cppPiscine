@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/12 16:42:34 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/12 17:28:46 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-        Bureaucrat *b = new Bureaucrat("Federico",150);
+        Bureaucrat *b = new Bureaucrat("Federico",1);
         b->IncrementGrade();
     }
     catch (std::exception & e)
