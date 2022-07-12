@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:58:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/07/12 17:43:24 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:39:35 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,12 @@ class Form{
         int getGradeExec() const;
 
 };
-/*std::ostream& operator<<(std::ostream& os, const Form& b)
+/*std::ostream& operator<<(std::ostream& os,  Form& b)
 {
     os <<  "Form " << b.getName() << " is signed " << b.getisSigned() << "and has " << b.getGradeSigned() << "signed grade" << std::endl;
     return (os);
 }*/
+std::ostream&	operator << (std::ostream &os, Form &form);
 
 
 
