@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:14 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/12 16:42:34 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int main()
 {
     try
     {
-    Bureaucrat *b = new Bureaucrat("Federico",1);
-    
+        Bureaucrat *b = new Bureaucrat("Federico",150);
         b->IncrementGrade();
     }
     catch (std::exception & e)

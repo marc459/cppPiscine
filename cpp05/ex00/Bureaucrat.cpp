@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:31 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/12 14:34:18 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/12 16:42:04 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const std::string name, int grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade): name(name), grade(grade)
 {
     if(grade > 150)
         throw Bureaucrat::gradeTooLowException();
@@ -20,17 +20,14 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
         throw Bureaucrat::gradeTooHighException();
     else{
         std::cout << "Bureaucrat constructor called" << std::endl;
-        this->setName(name);
         
-        this->setGrade(grade);
     }
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy): name(copy.name), grade(copy.grade)
 {
     std::cout << "Bureaucrat copy constructor called" << std::endl;
-    this->setName(copy.getName());
-    this->setGrade(copy.getGrade());
+
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -41,8 +38,7 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &op)
 {
     std::cout << "Bureaucrat Assigment operator called" << std::endl;
-    this->setName(op.getName());
-    this->setGrade(op.getGrade());
+    this->grade = op.getGrade();
     return (*this);
 }
 
@@ -84,16 +80,8 @@ std::string Bureaucrat::getName() const
 {
     return this->name;
 }
-void Bureaucrat::setName(std::string name)
-{
-    this->name = name;
-}
 
 int Bureaucrat::getGrade() const
 {
     return this->grade;
-}
-void Bureaucrat::setGrade(int grade)
-{
-    this->grade = grade;
 }
