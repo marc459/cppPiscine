@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:58:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/03/29 21:28:35 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/18 22:07:17 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@
 class Bureaucrat;
 class Form{
     private:
-    std::string name;
+        const std::string name;
         bool isSigned;
-        int gradeSigned;
-        int gradeExec;
+        const int gradeSigned;
+        const int gradeExec;
 
     public:
+        Form();
         Form(const std::string name, int gradeSigned, int gradeExec);
 		Form(const Form &copy);
 		virtual	~Form(void);
 		Form &operator=(const Form &op);
-        void execute(Bureaucrat const & executor) const;
         
         int    beSigned(const Bureaucrat &b);
+        virtual void	execute(Bureaucrat const &executor) const;
 
         class gradeTooHighException : std::exception 
         {
@@ -42,47 +43,25 @@ class Form{
             public:
                 virtual const char* what() const throw();
         };
+        class formNotSignedException : public std::exception 
+        {
+            public:
+                virtual const char* what() const throw();
+        };
 
-        bool getisSigned() const {
-            return this->isSigned;
-        }
+        bool getisSigned() const;
 
-        void setIsSigned(bool isSigned) {
-            this->isSigned = isSigned;
-        }
+        void setIsSigned(bool isSigned);
 
-        std::string getName() const {
-            return this->name;
-        }
+        std::string getName() const;
 
-        void setName(std::string name) {
-            this->name = name;
-        }
 
-        int getGradeSigned() const {
-            return this->gradeSigned;
-        }
+        int getGradeSigned() const;
+        int getGradeExec() const;
 
-        void setGradeSigned(int gradeSigned) {
-            this->gradeSigned = gradeSigned;
-        }
-
-        int getGradeExec() const {
-            return this->gradeExec;
-        }
-
-        void setGradeExec(int gradeExec) {
-            this->gradeExec = gradeExec;
-        }
-        
 };
-std::ostream	&operator<<(std::ostream &out, const Form &instance)
-{
-	out << instance.getName() << " , with execute grade " << instance.getGradeExec()
-		<< " and grade to be signed " << instance.getGradeSigned() << " is signed "
-		<< instance.getisSigned() << std::endl;
-	return out;
-}
+
+std::ostream&	operator << (std::ostream &os, Form &form);
 
 
 

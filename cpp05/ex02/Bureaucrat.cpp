@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:31 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/29 21:30:29 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/18 20:40:52 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,6 @@ const char *Bureaucrat::gradeTooLowException::what() const throw() {
 
 void Bureaucrat::signForm(Form &f)
 {
-    /*if(f->beSigned(this))
-        std::cout << this->getName() << " signs " << f->getName() << std::endl;
-    else
-        std::cout << this->getName() << " cannot sign " << f->getName() << "because " << << std::endl;*/
     
     try
     {
@@ -94,20 +90,20 @@ void Bureaucrat::signForm(Form &f)
     }
     catch(const std::exception& e)
     {
-        std::cout << this->getName() << " cannot sign " << f.getName() << "because " << e.what() << std::endl;
+        std::cout << this->getName() << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
     }
     
 }
-void Bureaucrat::executeForm(Form const & form)
+
+void	Bureaucrat::executeForm(Form const &form)
 {
-    try
+	try
 	{
 		form.execute(*this);
 		std::cout << this->name << " executes " << form.getName() << std::endl;
 	}
-	catch (std::exception &e)
+	catch(const std::exception& e)
 	{
-		std::cout << this->name << " cannot execute " << form.getName() << " because ";
-		std::cout << e.what() << std::endl;
-	}
+		std::cerr << e.what() << '\n';
+	}	
 }

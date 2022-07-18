@@ -6,16 +6,22 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:29 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/18 02:23:53 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/18 22:06:40 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardon", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardon", 25, 5), target("")
+{
+	std::cout << " main PresidentialPardonForm constructor called" << std::endl;
+
+}
+
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardon", 25, 5), target(target)
 {
 	std::cout << "PresidentialPardonForm constructor called" << std::endl;
-	this->_target = target;
+
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
@@ -31,14 +37,16 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &op)
 {
-	if (&op == this)
-		return *this;
-	this->_target = op._target;
+	this->target = op.getTarget();
 	return *this;
 }
 
 void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	Form::execute(executor);
-	std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	std::cout << this->target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+}
+
+std::string PresidentialPardonForm::getTarget() const{
+	return this->target;
 }

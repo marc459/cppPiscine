@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:35 by marcos            #+#    #+#             */
-/*   Updated: 2022/03/18 03:08:46 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/18 20:39:15 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat{
         void IncrementGrade();
         void DecrementGrade();
         void signForm( Form &f);
-        void executeForm(Form const & form);
+        void executeForm(Form const &form);
 
         std::string getName() const
         {
