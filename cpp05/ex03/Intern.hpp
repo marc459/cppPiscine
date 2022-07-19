@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:51:01 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 16:53:29 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 18:48:06 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,16 @@ class Intern
 		~Intern();
 		Intern&	operator = (const Intern &intern);
 
-		Form*	makeShrubberyForm(std::string targetForm);
-		Form*	makeRobotomyForm(std::string targetForm);
-		Form*	makePresidentiaPardonForm(std::string targetForm);
+		Form*	ShrubberyForm(std::string targetForm);
+		Form*	RobotomyForm(std::string targetForm);
+		Form*	PresidentiaPardonForm(std::string targetForm);
 		Form*	makeForm(std::string nameForm, std::string targetForm);
 
-		class FormDoesntExistException: public std::exception
+		class InexistentFormException: public std::exception
 		{
 			public:
-				virtual const char* what() const throw()
-				{
-					return ("Form does not exist");
-				}
+                virtual const char* what() const throw();
 		};
 };
-
-std::ostream&	operator << (std::ostream &o, const Intern &intern);
 
 #endif

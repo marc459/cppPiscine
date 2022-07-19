@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/05/17 14:51:05 by msantos-         ###   ########.fr        #
+#    Updated: 2022/07/19 19:02:48 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ clean:
 
 fclean: clean
 		@rm -rf $(PROGRAM) $(CLIENT)
+		@rm -rf *_shrubbery
 
 re: fclean all
 

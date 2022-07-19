@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:54:04 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 16:58:44 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 18:48:23 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,35 +33,41 @@ Intern&	Intern::operator = (const Intern &intern)
 	return (*this);
 }
 
-Form*	Intern::makeShrubberyForm(std::string targetForm)
+Form*	Intern::ShrubberyForm(std::string targetForm)
 {
-	ShrubberyCreationForm	*shu = new ShrubberyCreationForm(targetForm);
-	std::cout << "ShrubberyCreationForm." << std::endl;
-	return (shu);
+	ShrubberyCreationForm	*form = new ShrubberyCreationForm(targetForm);
+	return (form);
 }
 
-Form*	Intern::makeRobotomyForm(std::string targetForm)
+Form*	Intern::RobotomyForm(std::string targetForm)
 {
-	RobotomyRequestForm	*rob = new RobotomyRequestForm(targetForm);
-	std::cout << "RobotomyRequestForm." << std::endl;
-	return (rob);
+	RobotomyRequestForm	*form = new RobotomyRequestForm(targetForm);
+	return (form);
 }
 
-Form*	Intern::makePresidentiaPardonForm(std::string targetForm)
+Form*	Intern::PresidentiaPardonForm(std::string targetForm)
 {
-	PresidentialPardonForm	*pres = new PresidentialPardonForm(targetForm);
-	std::cout << "PresidentialPardonForm." << std::endl;
-	return (pres);
+	PresidentialPardonForm	*form = new PresidentialPardonForm(targetForm);
+	return (form);
 }
+
+const char *Intern::InexistentFormException::what() const throw() {
+	return ("Form not known");
+}
+
+
 
 Form*	Intern::makeForm(std::string nameForm, std::string targetForm)
 {
-	std::string	options[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	Form* (Intern::*arrPtr[])(std::string targetForm) = {&Intern::makeShrubberyForm, &Intern::makeRobotomyForm, &Intern::makePresidentiaPardonForm};
-	int i = -1;
+	std::string	opts[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	Form* (Intern::*refForms[])(std::string targetForm) = {&Intern::ShrubberyForm, &Intern::RobotomyForm, &Intern::PresidentiaPardonForm};
+	int i = 0;
 
-	while (i++ < 3)
-		if (options[i] == nameForm)
-			return ((this->*arrPtr[i])(targetForm));
-	throw Intern::FormDoesntExistException();
+	while (i < 3)
+	{
+		if (opts[i] == nameForm)
+			return ((this->*refForms[i])(targetForm));
+		i++;
+	}
+	throw Intern::InexistentFormException();
 }

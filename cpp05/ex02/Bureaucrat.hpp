@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:35 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/18 20:39:15 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 18:57:43 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class Form;
 class Bureaucrat{
     private:
-        std::string name;
+        const std::string name;
         int grade;
 
     public:
@@ -46,23 +46,8 @@ class Bureaucrat{
         void signForm( Form &f);
         void executeForm(Form const &form);
 
-        std::string getName() const
-        {
-            return this->name;
-        }
-        void setName(std::string name)
-        {
-            this->name = name;
-        }
-
-        int getGrade() const
-        {
-            return this->grade;
-        }
-        void setGrade(int grade)
-        {
-            this->grade = grade;
-        }
+        std::string getName() const;
+        int getGrade() const;
 };
 
 std::ostream& operator <<(std::ostream& os, const Bureaucrat& b);
