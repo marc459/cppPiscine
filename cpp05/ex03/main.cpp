@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 19:31:07 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/19 20:01:12 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 	
 	return 0;
