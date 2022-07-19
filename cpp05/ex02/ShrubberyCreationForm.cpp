@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:59 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/18 23:38:48 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 12:35:50 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-	//Form::execute(executor);
+	if (executor.getGrade() > this->getGradeExec())
+		throw Bureaucrat::gradeTooLowException();
 	std::fstream file;
-	const std::string append = this->target + "_shrubbery";
-	file.open(append.c_str() , std::fstream::out);
+	file.open((this->target + "_shrubbery").c_str() , std::fstream::out);
 	if(file.is_open())
 	{
 	file << "	     .{{}}}}}}.        " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:45 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/18 23:25:35 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 14:05:56 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
-	Form::execute(executor);
-	std::cout << "Drilling noises TRTTR TRTRTRTRTR TRTRTRTRT" << std::endl;
+	if (executor.getGrade() > this->getGradeExec())
+		throw Bureaucrat::gradeTooLowException();
+	std::cout << "Drilling noises" << std::endl;
 	std::cout << this->target << " has been robotomized successfully 50% of the time." << std::endl;
 }

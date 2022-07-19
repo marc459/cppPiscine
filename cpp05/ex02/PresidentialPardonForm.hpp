@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:38 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/18 21:54:35 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 14:05:14 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ class PresidentialPardonForm : public Form
 
 		void	execute(const Bureaucrat &executor) const;
 		
-		std::string getTarget() const;
 };
