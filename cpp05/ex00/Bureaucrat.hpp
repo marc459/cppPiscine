@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:35 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/12 16:19:24 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/19 14:14:23 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ class Bureaucrat{
         void DecrementGrade();
 
         std::string getName() const;
-
         int getGrade() const;
 };
 

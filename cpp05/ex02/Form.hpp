@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:58:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/07/18 22:07:17 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 14:55:52 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Form{
 		Form &operator=(const Form &op);
         
         int    beSigned(const Bureaucrat &b);
-        virtual void	execute(Bureaucrat const &executor) const;
+        virtual void	execute(Bureaucrat const &executor) const = 0;
 
         class gradeTooHighException : std::exception 
         {

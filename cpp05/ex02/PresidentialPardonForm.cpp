@@ -6,17 +6,11 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:29 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 14:05:08 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 14:08:12 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-
-PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardon", 25, 5), target("")
-{
-	std::cout << " main PresidentialPardonForm constructor called" << std::endl;
-
-}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardon", 25, 5), target(target)
 {
