@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:47:13 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 17:00:53 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 19:31:07 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,27 @@ int main()
 {
 
 	Intern	someRandom;
-	Form*	scf;
-	Form*	rrf;
-	Form*	ppf;
-	Form*	fake;
+	Form*	form1;
+	Form*	form2;
+	Form*	form3;
+	Form*	form4;
 
 	try
 	{
-		scf = someRandom.makeForm("shrubbery creation", "House");
-		rrf = someRandom.makeForm("robotomy request", "Bender");
-		ppf = someRandom.makeForm("presidential pardon", "Criminal");
-		std::cout << *scf << std::endl;
-		std::cout << *rrf << std::endl;
-		std::cout << *ppf << std::endl;
-		delete scf;
-		delete rrf;
-		delete ppf;
-		fake = someRandom.makeForm("sdfkj", "Fake");
+		Bureaucrat *a = new Bureaucrat("a", 1);
+		form1 = someRandom.makeForm("shrubbery creation", "target1");
+		form2 = someRandom.makeForm("robotomy request", "target2");
+		form3 = someRandom.makeForm("presidential pardon", "target3");
+		std::cout << *form1 << std::endl;
+		std::cout << *form2 << std::endl;
+		a->signForm(*form2);
+		form2->execute(*a);
+		std::cout << *form3 << std::endl;
+		delete form1;
+		delete form2;
+		delete form3;
+
+		form4 = someRandom.makeForm("aaaaa", "target");
 	}
 	catch(const std::exception& e)
 	{

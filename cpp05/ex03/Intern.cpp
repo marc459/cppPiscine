@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:54:04 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 18:48:23 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:12:37 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,20 @@ const char *Intern::InexistentFormException::what() const throw() {
 
 
 
-Form*	Intern::makeForm(std::string nameForm, std::string targetForm)
+Form*	Intern::makeForm(std::string name, std::string target)
 {
 	std::string	opts[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	Form* (Intern::*refForms[])(std::string targetForm) = {&Intern::ShrubberyForm, &Intern::RobotomyForm, &Intern::PresidentiaPardonForm};
+	Form* (Intern::*refForms[])(std::string target) = {&Intern::ShrubberyForm, &Intern::RobotomyForm, &Intern::PresidentiaPardonForm};
 	int i = 0;
 
 	while (i < 3)
 	{
-		if (opts[i] == nameForm)
-			return ((this->*refForms[i])(targetForm));
+		if (opts[i] == name)
+		{
+			std::cout << "Intern creates " << name << std::endl;
+			return ((this->*refForms[i])(target));
+		}
+			
 		i++;
 	}
 	throw Intern::InexistentFormException();
