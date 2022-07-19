@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:58:36 by msantos-          #+#    #+#             */
-/*   Updated: 2022/07/12 19:49:46 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/07/19 21:54:46 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Form{
         
         int    beSigned(const Bureaucrat &b);
 
-        class gradeTooHighException : std::exception 
+        class gradeTooHighException : public std::exception 
         {
             public:
                 virtual const char* what() const throw();
