@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:45 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 14:05:56 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 15:02:12 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+	if (!this->getisSigned())
+		throw Form::formNotSignedException();
 	if (executor.getGrade() > this->getGradeExec())
 		throw Bureaucrat::gradeTooLowException();
 	std::cout << "Drilling noises" << std::endl;

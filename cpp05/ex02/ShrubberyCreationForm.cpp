@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:44:59 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 12:35:50 by marcos           ###   ########.fr       */
+/*   Updated: 2022/07/19 15:02:16 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
+	if (!this->getisSigned())
+		throw Form::formNotSignedException();
 	if (executor.getGrade() > this->getGradeExec())
 		throw Bureaucrat::gradeTooLowException();
 	std::fstream file;
