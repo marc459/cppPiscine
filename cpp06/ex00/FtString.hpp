@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Conversion.hpp                                     :+:      :+:    :+:   */
+/*   FtString.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 09:53:05 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/20 10:00:52 by marcos           ###   ########.fr       */
+/*   Created: 2022/08/02 21:22:23 by marcos            #+#    #+#             */
+/*   Updated: 2022/08/02 22:42:26 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERSION_HPP
-#define CONVERSION_HPP
+
+#ifndef FTSTRING_HPP
+#define FTSTRING_HPP
 
 #include <fstream>
 #include <iostream>
@@ -19,24 +20,31 @@
 #include <string>
 
 
-class Conversion{
+class Ftstring{
     private:
-        const std::string name;
-        int grade;
+        const std::string value;
 
     public:
-        Conversion(const std::string name, int grade);
-		Conversion(const Conversion &copy);
-		virtual	~Conversion(void);
-		Conversion &operator=(const Conversion &op);
+        Ftstring(const std::string value);
+		Ftstring(const Ftstring &copy);
+		virtual	~Ftstring(void);
+		Ftstring &operator=(const Ftstring &op);
 
-        class imposibleConversionException : public std::exception 
+        void	toChar(double number);
+        void	toInt(double number);
+        void	toFloat(double number);
+        void	toDouble(double number);
+
+        void    getValue() const;
+
+
+        class imposibleFtstringException : public std::exception 
         {
 		    public:
                 virtual const char* what() const throw();
         };
 };
 
-std::ostream& operator<<(std::ostream& os, const Conversion& b);
+std::ostream& operator<<(std::ostream& os, const Ftstring& b);
 
 #endif
