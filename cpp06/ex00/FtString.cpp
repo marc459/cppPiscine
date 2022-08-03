@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 21:35:23 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/03 22:09:34 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,20 @@ double ft_stod(std::string str)
 
 Ftstring::Ftstring(const std::string word)
 {
-    if (word == "+inff")
+    if (!strncmp(word.c_str(), "+inff",6))
         this->value = 1.0 / 0.0;
-    else if (word == "-inff")
+    else if (!strncmp(word.c_str(), "-inff",6))
         this->value = -1.0 / 0.0;
-    else if (word == "nanf")
+    else if (!strncmp(word.c_str(), "nanf",5))
+        this->value = 0.0 / 0.0;
+    else if (!strncmp(word.c_str(), "+inf",6))
+        this->value = 1.0 / 0.0;
+    else if (!strncmp(word.c_str(), "-inf",6))
+        this->value = -1.0 / 0.0;
+    else if (!strncmp(word.c_str(), "nan",5))
         this->value = 0.0 / 0.0;
     else
         this->value = ft_stod(word);
-    std::cout << "String to double: " <<  this->value << std::endl;
 }
 Ftstring::Ftstring(const Ftstring &copy)
 {
@@ -96,18 +101,12 @@ void	Ftstring::toFloat()
 	float	numFloat;
 	
 	numFloat = static_cast<float>(this->value);
-	if (roundf(numFloat) != numFloat || this->value < -999999 || this->value > 999999)
-		std::cout << "Float: " << numFloat << "f" << std::endl;
-	else
-		std::cout << "Float: " << numFloat << ".0f" << std::endl;
+	std::cout << "Float: " << numFloat << "f" << std::endl;
 }
 
 void	Ftstring::toDouble()
 {
-	if (this->value < -999999 || this->value > 999999 || this->value != this->value)
-		std::cout << "Double: " << this->value << std::endl;
-	else
-		std::cout << "Double: " << this->value << ".0" << std::endl;
+	std::cout << "Double: " << this->value << std::endl;
 }
 
 double Ftstring::getValue() const

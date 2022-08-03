@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 21:31:21 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/03 21:52:37 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int main(int argc, char const *argv[])
 		std::cout << "Wrong num of args" << std::endl;
 		return (0);
 	}
-     
 	try
 	{
-
         Ftstring *conversion = new Ftstring(argv[1]);
 		std::cout << std::endl;
 		conversion->toChar();
