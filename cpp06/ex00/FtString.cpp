@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FtString.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 16:36:30 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/03 21:35:23 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,37 +21,37 @@ double ft_stod(std::string str)
     double ret = 0;
     double frac = 0;
     //exception if character
-    while(str.at(i) || str.at(i) == '.')
+    if(str.find_first_not_of("0123456789.") != std::string::npos)
+        throw Ftstring::imposibleConversionException();
+    while(i < str.length() && i < str.find_first_of("."))
     {
         ret = ret * 10 + (str.at(i) - '0');
         i++;
     }
-    i = str.length();
-    if(str.at(i) == '.')
+    i = str.length() -1;
+    if(str.find_first_of(".") != std::string::npos)
     {
-        while(str.at(i) != '.')
+        while(i > str.find_first_of("."))
         {
             frac = frac / 10 + (float)(str.at(i) - '0') / 10;
+            i--;
         }
-        i--;
+        
     }
     return ret + frac;
 }
 
 Ftstring::Ftstring(const std::string word)
 {
-    double		nDouble;
     if (word == "+inff")
-        nDouble = 1.0 / 0.0;
+        this->value = 1.0 / 0.0;
     else if (word == "-inff")
-        nDouble = -1.0 / 0.0;
+        this->value = -1.0 / 0.0;
     else if (word == "nanf")
-        nDouble = 0.0 / 0.0;
+        this->value = 0.0 / 0.0;
     else
-        nDouble = ft_stod(word);
-    this->value = nDouble;
+        this->value = ft_stod(word);
     std::cout << "String to double: " <<  this->value << std::endl;
-    
 }
 Ftstring::Ftstring(const Ftstring &copy)
 {
@@ -65,7 +65,6 @@ Ftstring &Ftstring::operator=(const Ftstring &op)
 {
     this->value = op.getValue();
     return(*this);
-    
 }
         
 void	Ftstring::toChar()
