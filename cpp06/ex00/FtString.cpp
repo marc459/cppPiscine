@@ -6,11 +6,37 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 03:30:33 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/03 16:36:30 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FtString.hpp"
+#include <stdlib.h>
+#include <string>
+#include <iomanip>
+
+double ft_stod(std::string str)
+{
+    size_t i = 0;
+    double ret = 0;
+    double frac = 0;
+    //exception if character
+    while(str.at(i) || str.at(i) == '.')
+    {
+        ret = ret * 10 + (str.at(i) - '0');
+        i++;
+    }
+    i = str.length();
+    if(str.at(i) == '.')
+    {
+        while(str.at(i) != '.')
+        {
+            frac = frac / 10 + (float)(str.at(i) - '0') / 10;
+        }
+        i--;
+    }
+    return ret + frac;
+}
 
 Ftstring::Ftstring(const std::string word)
 {
@@ -22,8 +48,9 @@ Ftstring::Ftstring(const std::string word)
     else if (word == "nanf")
         nDouble = 0.0 / 0.0;
     else
-        nDouble = std::stod(word);
+        nDouble = ft_stod(word);
     this->value = nDouble;
+    std::cout << "String to double: " <<  this->value << std::endl;
     
 }
 Ftstring::Ftstring(const Ftstring &copy)
@@ -96,7 +123,7 @@ const char *Ftstring::imposibleConversionException::what() const throw() {
 
 std::ostream& operator<<(std::ostream& os, const Ftstring& b)
 {
-    os <<  " " << b.getValue() << std::endl;
+    os <<  "Error:  " << b.getValue() << std::endl;
     return (os);
 }
 
