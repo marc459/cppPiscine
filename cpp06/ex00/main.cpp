@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/02 22:42:11 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/03 03:19:26 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,22 @@
 
 int main(int argc, char const *argv[])
 {
-    Ftstring conversion = new Ftstring();
-	std::string	word;
-	double		nDouble;
-
+   
 	if (argc != 2)
 	{
 		std::cout << "Wrong num of args" << std::endl;
 		return (0);
 	}
-	word = argv[1];
+     
 	try
 	{
-		if (word == "+inff")
-			nDouble = 1.0 / 0.0;
-		else if (word == "-inff")
-			nDouble = -1.0 / 0.0;
-		else if (word == "nanf")
-			nDouble = 0.0 / 0.0;
-		else
-			nDouble = std::stod(word);
+
+        Ftstring *conversion = new Ftstring(argv[1]);
 		std::cout << std::endl;
-		displayChar(nDouble);
-		displayInt(nDouble);
-		displayFloat(nDouble);
-		displayDouble(nDouble);
+		conversion->toChar();
+		conversion->toInt();
+		conversion->toFloat();
+		conversion->toDouble();
 	}
 	catch(const std::exception& e)
 	{
