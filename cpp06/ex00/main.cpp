@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 21:52:37 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/04 21:45:44 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(int argc, char const *argv[])
 	try
 	{
         Ftstring *conversion = new Ftstring(argv[1]);
-		std::cout << std::endl;
 		conversion->toChar();
 		conversion->toInt();
 		conversion->toFloat();

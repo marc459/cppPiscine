@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/04 20:53:19 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/04 21:54:23 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ double ft_stod(std::string str)
     size_t i = 0;
     double ret = 0;
     double frac = 0;
-    if(str.find_first_of(".") != str.find_last_of("."))
-        throw Ftstring::imposibleConversionException();
-    if(str.find_first_not_of("0123456789.") != std::string::npos)
-        throw Ftstring::imposibleConversionException();
-    while(i < str.length() && i < str.find_first_of("."))
+
+    while(i < str.length() && i < str.find_first_of(".") && i < str.find_first_not_of("0123456789.") )
     {
         ret = ret * 10 + (str.at(i) - '0');
         i++;
     }
-    i = str.length() -1;
+    if(str.find_first_not_of("0123456789",i +1) != 0 && str.find_first_not_of("0123456789",i +1) != std::string::npos)
+        i = str.find_first_not_of("0123456789",i +1) -1;
+    else
+        i = str.length() -1;
     if(str.find_first_of(".") != std::string::npos)
     {
         while(i > str.find_first_of("."))
