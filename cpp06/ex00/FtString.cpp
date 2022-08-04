@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/04 21:54:23 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/04 22:34:42 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,18 @@ void	Ftstring::toFloat()
 	float	numFloat;
 	
 	numFloat = static_cast<float>(this->value);
-	std::cout << "Float: " << numFloat << "f" << std::endl;
+   if (numFloat< -999999 || numFloat > 999999 || this->value != this->value)
+        std::cout << "Float: " << numFloat << "f"  << std::endl;
+   else
+	    std::cout << "Float: " << numFloat << ".0f"  << std::endl;
 }
 
 void	Ftstring::toDouble()
 {
-	std::cout << "Double: " << this->value << std::endl;
+    if (this->value < -999999 || this->value > 999999 || this->value != this->value)
+	    std::cout << "Double: " << this->value << std::endl;
+    else
+        std::cout << "Double: " << this->value <<  ".0" <<std::endl;
 }
 
 double Ftstring::getValue() const
