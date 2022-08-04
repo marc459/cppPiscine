@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/04 13:38:24 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/04 13:56:10 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 #include <stdlib.h>
 Base *generate(void)
 {
-	
+	srand(time(NULL));
 	int rand = std::rand() % 3;
+	std::cout << rand << std::endl;
 	Base *foo;
 	switch(rand)
 	{
@@ -73,7 +74,7 @@ void identify(Base &p)
 			}
 			catch(const std::exception& e)
 			{
-				std::cerr << e.what() << '\n';
+				std::cerr << e.what()  << '\n';
 			}
 		}
 	}
@@ -81,6 +82,7 @@ void identify(Base &p)
 
 int main(void)
 {
+	//Base *c = new Base();
 	Base	*p = generate();
 	identify(p);
 	identify(*p);
