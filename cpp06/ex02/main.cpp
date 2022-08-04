@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/04 13:56:10 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/04 20:32:11 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,33 +44,34 @@ Base *generate(void)
 void identify(Base *p)
 {
 	if (dynamic_cast<A*>(p))
-		std::cout << "A object by pointer." << std::endl;
+		std::cout << "A guessed by pointer" << std::endl;
 	else if (dynamic_cast<B*>(p))
-		std::cout << "B object by pointer." << std::endl;
+		std::cout << "B guessed by pointer" << std::endl;
 	else if (dynamic_cast<C*>(p))
-		std::cout << "C object by pointer." << std::endl;
+		std::cout << "C guessed by pointer" << std::endl;
 	
 }
 void identify(Base &p)
 {
+
  try
 	{
 		(void)dynamic_cast<A&>(p);
-		std::cout << "A object by reference." << std::endl;
+		std::cout << "A guessed by reference" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		try
 		{
 			(void)dynamic_cast<B&>(p);
-			std::cout << "B object by reference." << std::endl;
+			std::cout << "B guessed by reference" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			try
 			{
 				(void)dynamic_cast<C&>(p);
-				std::cout << "C object by reference." << std::endl;
+				std::cout << "C guessed by reference" << std::endl;
 			}
 			catch(const std::exception& e)
 			{

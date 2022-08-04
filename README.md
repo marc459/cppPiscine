@@ -6,3 +6,7 @@ It starts from the basics and includes all the important concepts to start progr
 CPP00 - Namespace, classes, member functions, stdio streeam, initialization lists,static,const
 
 CPP01 - 
+
+CPP05 - Exceptions
+
+CPP06 - Static_cast, reinterpret_cast, dynamic_cast
