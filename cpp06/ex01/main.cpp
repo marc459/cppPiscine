@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 23:06:01 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:50:21 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 #include <string>
+#include <string.h>
 #include <iostream>
 #include <math.h>
 #include "Data.hpp"

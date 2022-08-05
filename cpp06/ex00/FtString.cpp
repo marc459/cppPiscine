@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   FtString.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/04 22:34:42 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:49:43 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FtString.hpp"
 #include <stdlib.h>
 #include <string>
+#include <string.h>
 #include <iomanip>
 
 double ft_stod(std::string str)
