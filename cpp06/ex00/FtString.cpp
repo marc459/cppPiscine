@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/05 17:37:13 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:54:49 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ double Ftstring::ft_stod(std::string str)
     {
         while(i > str.find_first_of("."))
         {
-            this->isFrac = 1;
             frac = frac / 10 + (float)(str.at(i) - '0') / 10;
             i--;
         }
         
     }
+    if(frac > 0)
+        this->isFrac = 1;
     return ret + frac;
 }
 
