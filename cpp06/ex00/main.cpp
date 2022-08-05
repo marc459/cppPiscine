@@ -6,13 +6,11 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/04 21:45:44 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:14:30 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FtString.hpp"
-
-#include <string>
 #include <iostream>
 #include <math.h>
 

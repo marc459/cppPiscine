@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FtString.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:22:23 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/03 03:27:52 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/05 17:35:40 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@
 class Ftstring{
     private:
         double value;
+        int isFrac;
 
     public:
         Ftstring(const std::string value);
 		Ftstring(const Ftstring &copy);
 		virtual	~Ftstring(void);
 		Ftstring &operator=(const Ftstring &op);
+
+        double ft_stod(std::string str);
 
         void	toChar();
         void	toInt();

@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   FtString.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:45:42 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/05 14:49:43 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/05 17:37:13 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FtString.hpp"
 #include <stdlib.h>
-#include <string>
 #include <string.h>
 #include <iomanip>
 
-double ft_stod(std::string str)
+double Ftstring::ft_stod(std::string str)
 {
     size_t i = 0;
     double ret = 0;
@@ -35,6 +34,7 @@ double ft_stod(std::string str)
     {
         while(i > str.find_first_of("."))
         {
+            this->isFrac = 1;
             frac = frac / 10 + (float)(str.at(i) - '0') / 10;
             i--;
         }
@@ -43,7 +43,7 @@ double ft_stod(std::string str)
     return ret + frac;
 }
 
-Ftstring::Ftstring(const std::string word)
+Ftstring::Ftstring(const std::string word): isFrac(0)
 {
     if (!strncmp(word.c_str(), "+inff",6))
         this->value = 1.0 / 0.0;
@@ -103,7 +103,7 @@ void	Ftstring::toFloat()
 	float	numFloat;
 	
 	numFloat = static_cast<float>(this->value);
-   if (numFloat< -999999 || numFloat > 999999 || this->value != this->value)
+   if (numFloat< -999999 || numFloat > 999999 || this->value != this->value || this->isFrac)
         std::cout << "Float: " << numFloat << "f"  << std::endl;
    else
 	    std::cout << "Float: " << numFloat << ".0f"  << std::endl;
@@ -111,7 +111,7 @@ void	Ftstring::toFloat()
 
 void	Ftstring::toDouble()
 {
-    if (this->value < -999999 || this->value > 999999 || this->value != this->value)
+    if (this->value < -999999 || this->value > 999999 || this->value != this->value || this->isFrac)
 	    std::cout << "Double: " << this->value << std::endl;
     else
         std::cout << "Double: " << this->value <<  ".0" <<std::endl;
