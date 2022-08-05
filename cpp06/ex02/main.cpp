@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/05 17:14:46 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:56:25 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Base *generate(void)
 {
 	srand(time(NULL));
 	int rand = std::rand() % 3;
-	std::cout << rand << std::endl;
 	Base *foo;
 	switch(rand)
 	{

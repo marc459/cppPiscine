@@ -10,3 +10,5 @@ CPP01 -
 CPP05 - Exceptions
 
 CPP06 - Static_cast, reinterpret_cast, dynamic_cast
+
+CPP07 - Templates
