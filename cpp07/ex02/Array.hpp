@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:15:01 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/11 22:54:03 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/12 18:45:26 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Array {
     {
         this->array = new T[0];
     }
-    Array(unsigned int n)
+    Array(unsigned int len)
     {
-        this->array = new T[n];
+        this->array = new T[len];
     }
     Array(Array &cp)
     {
@@ -53,7 +53,7 @@ class Array {
     T   &operator[](int pos)
     {
         if (pos > Array::size() || pos < 0)
-            throw Exception();
+            throw exception();
             return this->array[pos];
     }
     int size() const
@@ -65,7 +65,7 @@ class Array {
             i++;
         return i;
     }
-     class	Exception : public std::exception
+     class	exception : public std::exception
     {
         virtual const char * what() const throw()
         {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/11 15:08:49 by marcos           ###   ########.fr       */
+/*   Updated: 2022/08/12 18:29:43 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int b = 3;
 std::cout << "a = " << a << ", b = " << b << std::endl;
 std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-std::string c = "chaine1";
-std::string d = "chaine2";
+
+std::string c = "string1";
+std::string d = "string2";
 ::swap(c, d);
 std::cout << "c = " << c << ", d = " << d << std::endl;
 std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
