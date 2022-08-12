@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:15:01 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/12 19:30:00 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/12 19:31:16 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Array {
     T   &operator[](int pos)
     {
         int len = Array::size();
-        if (pos > len || pos < 0)
+        if (pos >= len || pos < 0)
             throw exception();
         return this->array[pos];
     }
