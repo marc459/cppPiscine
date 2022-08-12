@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:15:01 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/12 18:45:26 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/12 19:30:00 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ template <class T>
 class Array {
   private:
     T *array;
+    const int len;
 
   public:
-    Array()
+    Array() : len(0)
     {
         this->array = new T[0];
     }
-    Array(unsigned int len)
+    Array(unsigned int l) : len(l)
     {
-        this->array = new T[len];
+        this->array = new T[l];
     }
     Array(Array &cp)
     {
@@ -38,32 +39,22 @@ class Array {
     {
         delete [] this->array;
     }
-    Array &operator=( Array const &assig)
+    Array &operator=( Array const &cp)
     {
-
         for ( int i = 0; i < Array::size(); i++)
-        {
-            
-            this->array[i] = assig.array[i];
-            
-        }
-            
+            this->array[i] = cp.array[i];
         return *this;
     }
     T   &operator[](int pos)
     {
-        if (pos > Array::size() || pos < 0)
+        int len = Array::size();
+        if (pos > len || pos < 0)
             throw exception();
-            return this->array[pos];
+        return this->array[pos];
     }
     int size() const
     {
-        int i;
-
-        i = 0;
-        while(this->array[i])
-            i++;
-        return i;
+        return this->len;
     }
      class	exception : public std::exception
     {
