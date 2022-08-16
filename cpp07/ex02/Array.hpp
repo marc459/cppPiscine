@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:15:01 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/12 22:03:32 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/16 14:34:39 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,25 @@ class Array {
   public:
     Array() : len(0)
     {
+        //std::cout << "constructor base" << std::endl;
         this->array = new T[0];
     }
-    Array(int l) : len(l)
+    Array(int l)
     {
+        //std::cout << "constructor abase" << std::endl;
         if(l < 0)
             throw exception();
+        this->len = l;
         this->array = new T[l];
     }
     Array(Array &cp)
     {
+        //std::cout << "constructor copy" << std::endl;
+        this->array = new T[cp.len];
+        this->len = cp.len;
         for ( int i = 0; i < Array::size(); i++)
             this->array[i] = cp.array[i];
-        this->len = cp.len;
+        
     }
     ~Array()
     {
@@ -45,9 +51,12 @@ class Array {
     }
     Array &operator=( Array const &cp)
     {
+        //std::cout << "constructor assignation" << std::endl;
+        this->array = new T[cp.len];
+        this->len = cp.len;
         for ( int i = 0; i < Array::size(); i++)
             this->array[i] = cp.array[i];
-        this->len = cp.len;
+        
         return *this;
     }
     T   &operator[](int pos)
