@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/12 18:36:06 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/16 16:39:11 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	f(N a)
 int main(void)
 {
 	int			intarr[5] = {10, 8, 46, 25, 9};
-	float		floatarr[4] = {8.0, 22.7, 11.6, 39.1};
+	float		floatarr[4] = {8.0, 22.7, 11.6, 3.1};
 	std::string	stringarr[4] = {"this", "is", "an", "array"};
 
 
