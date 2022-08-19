@@ -6,43 +6,34 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/16 17:27:31 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/18 14:27:00 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-int main(void)
+int main()
 {
-
-
-    try
+    MutantStack<int> mstack;
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+    ++it;
+    --it;
+    while (it != ite)
     {
-	Array<char> charArray(4);
-    Array<float> floatChar(3);
-    Array<unsigned int> nothing;
-
-    
-    charArray[0] = 'f';
-    charArray[1] = 'o';
-    charArray[2] = 'u';
-    charArray[3] = 'r';
-    floatChar[0] = 23.5;
-    floatChar[1] = 66.66;
-    floatChar[2] = 433;
-    for (int i = 0; i < 4; i++)
-        std::cout << charArray[i] << std::endl;
-
-    for (int i = 0; i < 3; i++)
-        std::cout << floatChar[i] << std::endl;
-
-
-    
-        floatChar[11111] = 7;
+        std::cout << *it << std::endl;
+        ++it;
     }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-	return 0;
+    std::stack<int> s(mstack);
+    return 0;
 }

@@ -12,3 +12,7 @@ CPP05 - Exceptions
 CPP06 - Static_cast, reinterpret_cast, dynamic_cast
 
 CPP07 - Templates
+
+CC08 - Containers
+STL Library -> https://www.boost.org/sgi/stl/stl_introduction.html
+Containers -> https://cplusplus.com/reference/stl/

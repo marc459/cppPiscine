@@ -6,43 +6,38 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/16 17:27:31 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/19 17:28:59 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
-
+#include "easyfind.hpp"
+#include <vector>
+#include <list>
+#include <deque>
 int main(void)
 {
-
-
     try
     {
-	Array<char> charArray(4);
-    Array<float> floatChar(3);
-    Array<unsigned int> nothing;
 
-    
-    charArray[0] = 'f';
-    charArray[1] = 'o';
-    charArray[2] = 'u';
-    charArray[3] = 'r';
-    floatChar[0] = 23.5;
-    floatChar[1] = 66.66;
-    floatChar[2] = 433;
-    for (int i = 0; i < 4; i++)
-        std::cout << charArray[i] << std::endl;
-
-    for (int i = 0; i < 3; i++)
-        std::cout << floatChar[i] << std::endl;
-
-
-    
-        floatChar[11111] = 7;
+        std::vector<int>	vector;
+        std::list<int>		list;
+        std::deque<int>		deque;
+        
+        vector.push_back(1);
+        vector.push_back(2);
+        vector.push_back(30);
+        list.push_back(5);
+        list.push_back(24);
+        list.push_back(23);
+        deque.push_back(2);
+        deque.push_back(44);
+        deque.push_back(459);
+        std::cout << *easyfind(vector,2) << std::endl;
+        std::cout << *easyfind(list,24) << std::endl;
+        std::cout <<  *easyfind(deque,888) << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-	return 0;
 }
