@@ -6,13 +6,13 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/08/18 14:13:16 by msantos-         ###   ########.fr        #
+#    Updated: 2022/08/21 19:10:58 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #PROGRAMS
-PROGRAM = ex00
+PROGRAM = ex01
 
 #PATHS
 OBJ_PATH = ./objs
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = main.cpp
+PROGRAM_SRCS = main.cpp span.cpp
 
 
 #OBJS

@@ -6,20 +6,34 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/18 14:26:35 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/21 19:56:34 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
+#include "span.hpp"
 
 int main()
 {
-    Span sp = Span(5);
-    sp.addNumber(5);
-    sp.addNumber(3);
-    sp.addNumber(17);
-    sp.addNumber(9);
-    sp.addNumber(11);
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+        try
+    {
+        Span array1(3);
+
+
+        array1.AddNumber(4);
+        array1.AddNumber(5);
+        array1.AddNumber(6);
+
+        std::cout << array1 << std::endl;
+        array1.AddNumber(7);
+
+    
+
+        std::cout << array1 << std::endl;
+
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+	return 0;
 }
