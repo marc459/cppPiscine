@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:21:20 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/21 22:05:26 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:51:15 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 class Span{
     public:
         std::vector <int>intVector;
-
+        std::vector<int>::iterator it;
         unsigned long  filledout;
 
     public:
@@ -34,6 +34,7 @@ class Span{
     Span &operator=( Span const &cp);
     void addNumber(int nb);
     void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+    std::vector<int>&	Span::getList(void);
     int shortestSpan();
     int longestSpan();
 

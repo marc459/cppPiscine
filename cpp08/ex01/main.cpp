@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/21 22:03:01 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:50:38 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int main()
     try
     {
         Span sp(5);
+        Span	sp2(5);
+        
 
 
         //Span sp = Span(5);
@@ -25,6 +27,11 @@ int main()
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
+        
+        std::vector<int>::iterator	itb = sp.begin();
+	    std::vector<int>::iterator	ite = sp.end();
+        sp.addNumber(itb,ite);
+        std::cout << sp ;
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
 

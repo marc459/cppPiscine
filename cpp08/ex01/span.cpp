@@ -6,27 +6,30 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:19:19 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/21 22:40:20 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:51:25 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-    Span::Span(): filledout(0)
+    Span::Span() : filledout(0)
     {
-
+        this->it = this->intVector.begin();
     }
+
     
-    Span::Span(unsigned int l) :filledout(0)
+    
+    Span::Span(unsigned int l) : filledout(0)
     {
         if(l < 0)
             throw Span::ArrayFullException();
         this->intVector = std::vector<int>(l, 0);
+        this->it = this->intVector.begin();
     }
     
     Span::Span(Span &cp)
     {
-        this->filledout = cp.filledout;
+        this->it = cp.it;
         this->intVector = cp.intVector;
     }
 
@@ -36,19 +39,22 @@
     
     Span &Span::operator=( Span const &cp)
     {
-        this->filledout = cp.filledout;
+        this->it = cp.it;
         this->intVector = cp.intVector;
-
         
         return *this;
     }
     void Span::addNumber(int nb)
     {
-        std::cout << "size "<< this->intVector.size();
+        (void)nb;
+
         if(filledout < this->intVector.size())
         {
-            this->intVector.insert(this->filledout,nb);
+            
+            this->intVector[filledout] = nb;
             this->filledout++;
+            this->it++;
+
         }
         else
             throw Span::ArrayFullException();
@@ -56,20 +62,17 @@
     }
         void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
     {
-
         if(filledout < this->intVector.size())
         {
             while(begin != end)
             {
-                this->intVector.push_back(*begin);
+                this->intVector[filledout] = *begin;
                 this->filledout++;
                 begin++;
             }
-            
         }
         else
             throw Span::ArrayFullException();
-
     }
     
     int Span::shortestSpan()
@@ -101,6 +104,7 @@
         return max;
         
     }
+    std::vector<int>&	Span::getList(void) {return (_vInts);};
     const char *Span::ArrayFullException::what() const throw()
     {
         return "Error: Array is full";
@@ -112,6 +116,6 @@
     std::ostream&	operator << (std::ostream &os, Span &sp)
 {
 	os << "Array : " << std::endl;
-    for(unsigned long i = 0; i < sp.filledout; i++ ) os << " " << sp.intVector[i] <<  " ";
+    for(std::vector<int>::iterator it = sp.intVector.begin(); it != sp.intVector.end(); it++ ) os << " " << *it <<  " ";
 	return (os);
 }
