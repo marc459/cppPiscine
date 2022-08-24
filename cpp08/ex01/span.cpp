@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:19:19 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/22 19:51:25 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:27:24 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
     Span::Span(Span &cp)
     {
         this->it = cp.it;
+        this->filledout = cp.filledout;
         this->intVector = cp.intVector;
     }
 
@@ -40,6 +41,7 @@
     Span &Span::operator=( Span const &cp)
     {
         this->it = cp.it;
+        this->filledout = cp.filledout;
         this->intVector = cp.intVector;
         
         return *this;
@@ -60,7 +62,8 @@
             throw Span::ArrayFullException();
 
     }
-        void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+
+    void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
     {
         if(filledout < this->intVector.size())
         {
@@ -98,13 +101,13 @@
         max = this->intVector[0];
         for(std::vector<int>::iterator it = this->intVector.begin(); it != this->intVector.end(); it++)
         {
-            if(*it < max)
+            if(*it > max)
                 max = *it;
         }
         return max;
         
     }
-    std::vector<int>&	Span::getList(void) {return (_vInts);};
+    std::vector<int>&	Span::getList(void) {return (this->intVector);};
     const char *Span::ArrayFullException::what() const throw()
     {
         return "Error: Array is full";
@@ -115,7 +118,6 @@
     }
     std::ostream&	operator << (std::ostream &os, Span &sp)
 {
-	os << "Array : " << std::endl;
     for(std::vector<int>::iterator it = sp.intVector.begin(); it != sp.intVector.end(); it++ ) os << " " << *it <<  " ";
 	return (os);
 }
