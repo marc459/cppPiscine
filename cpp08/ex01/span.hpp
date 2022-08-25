@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:21:20 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/25 16:39:29 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/25 20:21:44 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Span{
 
     public:
     Span();
-    Span(unsigned int l);
-    Span(Span &cp);
+    Span(int l);
+    Span(Span const &cp);
     ~Span();
     Span &operator=( Span const &cp);
     void addNumber(int nb);
