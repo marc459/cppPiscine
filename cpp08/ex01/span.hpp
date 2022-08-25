@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:21:20 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/24 17:06:05 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:39:29 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 class Span{
     public:
         std::vector <int>intVector;
-        std::vector<int>::iterator it;
         unsigned long  filledout;
 
     public:

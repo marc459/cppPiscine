@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:19:19 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/24 17:27:24 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:39:16 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
     Span::Span() : filledout(0)
     {
-        this->it = this->intVector.begin();
     }
 
     
@@ -24,12 +23,10 @@
         if(l < 0)
             throw Span::ArrayFullException();
         this->intVector = std::vector<int>(l, 0);
-        this->it = this->intVector.begin();
     }
     
     Span::Span(Span &cp)
     {
-        this->it = cp.it;
         this->filledout = cp.filledout;
         this->intVector = cp.intVector;
     }
@@ -40,7 +37,6 @@
     
     Span &Span::operator=( Span const &cp)
     {
-        this->it = cp.it;
         this->filledout = cp.filledout;
         this->intVector = cp.intVector;
         
@@ -55,7 +51,6 @@
             
             this->intVector[filledout] = nb;
             this->filledout++;
-            this->it++;
 
         }
         else
