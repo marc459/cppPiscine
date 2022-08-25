@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 19:06:31 by msantos-          #+#    #+#              #
-#    Updated: 2022/08/11 22:22:29 by msantos-         ###   ########.fr        #
+#    Updated: 2022/08/24 18:11:00 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = main.cpp
+PROGRAM_SRCS = main.cpp mutantstack.cpp
 
 
 #OBJS
