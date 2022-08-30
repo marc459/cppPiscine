@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/30 19:24:44 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:39:00 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(void)
         deque.push_back(459);
         std::cout << *easyfind(vector,2) << std::endl;
         std::cout << *easyfind(list,24) << std::endl;
-        std::cout <<  *easyfind(deque,888) << std::endl;
+        std::cout <<  *easyfind(deque,444) << std::endl;
         
     }
     catch(const std::exception& e)

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:52:07 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/24 19:19:55 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:38:31 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ class MutantStack: public std::stack<T>{
 		typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 
 		MutantStack() : std::stack<T>(){};
-		MutantStack( const MutantStack<T> & other ) : std::stack<T>(other) {};
+		MutantStack( const MutantStack<T> & cp ) : std::stack<T>(cp) {};
 		virtual	~MutantStack(){};
 
-		MutantStack & operator=( const MutantStack<T> & other )
+		MutantStack & operator=( const MutantStack<T> & cp )
 		{
-			std::stack<T>::operator=(other);
+			std::stack<T>::operator=(cp);
 			return *this;
 		}
 
