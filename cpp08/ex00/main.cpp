@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/30 12:00:56 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:24:44 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,7 @@ int main(void)
 
         std::vector<int>	vector;
         std::list<int>		list;
-        //std::map<const char*, int> map;
         std::deque<int>		deque;
-        
-        /*map["january"] = 31;
-        map["february"] = 28;
-        map["march"] = 31;*/
         
         vector.push_back(1);
         vector.push_back(2);
@@ -40,7 +35,6 @@ int main(void)
         deque.push_back(459);
         std::cout << *easyfind(vector,2) << std::endl;
         std::cout << *easyfind(list,24) << std::endl;
-        //std::cout <<  *easyfind(map,31) << std::endl;
         std::cout <<  *easyfind(deque,888) << std::endl;
         
     }

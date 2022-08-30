@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:18:29 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/22 18:20:17 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:21:07 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typename T::iterator easyfind (T a, int b) {
     }
     throw(notfoundException());
 }
-
 
 
 #endif
