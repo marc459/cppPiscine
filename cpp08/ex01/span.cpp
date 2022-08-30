@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:19:19 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/25 20:21:40 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:39:23 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@
 
     
     
-    Span::Span(int l) : filledout(0)
+    Span::Span(unsigned int l) : filledout(0)
     {
-        if(l < 0)
-            throw Span::ArrayFullException();
         this->intVector = std::vector<int>(l, 0);
     }
     
@@ -62,17 +60,19 @@
 
     void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
     {
-        if(filledout < this->intVector.size())
+       
+        while(begin != end)
         {
-            while(begin != end)
+            if(filledout < this->intVector.size())
             {
                 this->intVector[filledout] = *begin;
                 this->filledout++;
                 begin++;
             }
+            else
+                throw Span::ArrayFullException();
         }
-        else
-            throw Span::ArrayFullException();
+
     }
     
     int Span::shortestSpan()
@@ -81,10 +81,10 @@
             throw Span::noSpanException();
         int min;
         min = this->intVector[0];
-        for(std::vector<int>::iterator it = this->intVector.begin(); it != this->intVector.end(); it++)
+        for(unsigned int i = 0; i < this->filledout; i++)
         {
-            if(*it < min)
-                min = *it;
+            if(this->intVector[i] < min)
+                min = this->intVector[i];
         }
         return min;
         
@@ -96,10 +96,10 @@
             throw Span::noSpanException();
         int max;
         max = this->intVector[0];
-        for(std::vector<int>::iterator it = this->intVector.begin(); it != this->intVector.end(); it++)
+        for(unsigned int i = 0; i < this->filledout; i++)
         {
-            if(*it > max)
-                max = *it;
+            if(this->intVector[i] > max)
+                max = this->intVector[i];
         }
         return max;
         

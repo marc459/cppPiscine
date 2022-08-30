@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/24 19:18:28 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 13:03:04 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ int main(void)
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
-	std::cout << mstack.top() << std::endl;
+	std::cout <<  mstack.top() << std::endl;
 	mstack.pop();
 	std::cout << mstack.size() << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
+
+    
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
@@ -35,33 +36,19 @@ int main(void)
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+    MutantStack<int> mstack2;
+    mstack2.push(3);
+    mstack2.push(3);
+    mstack2.push(3);
+    mstack2.push(3);
+    mstack2.push(3);
+
+    int i = 0;
+    MutantStack<int>::reverse_iterator rit = mstack2.rbegin();
+    for (; rit!= mstack2.rend(); ++rit)
+        *rit = ++i;
+    for (MutantStack<int>::iterator it = mstack2.begin(); it != mstack2.end(); ++it)
+        std::cout << *it << " ";
 	return 0;
 }
-
-/*
-int main()
-{
-    //MutantStack<int> mstack;
-    std::list<int> mstack;
-    mstack.push_back(5);
-    mstack.push_back(17);
-    //std::cout << mstack.top() << std::endl;
-    //mstack.pop();
-    std::cout << mstack.size() << std::endl;
-    mstack.push_back(3);
-    mstack.push_back(5);
-    mstack.push_back(737);
-    //[...]
-    //mstack.push(0);
-    std::list<int>::iterator it = mstack.begin();
-    std::list<int>::iterator ite = mstack.end();
-    ++it;
-    --it;
-    while (it != ite)
-    {
-        std::cout << *it << std::endl;
-        ++it;
-    }
-    //std::stack<int> s(mstack);
-    return 0;
-}*/

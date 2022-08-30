@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:21:20 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/25 20:21:44 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:27:21 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 class Span{
     public:
         std::vector <int>intVector;
-        unsigned long  filledout;
+        unsigned int  filledout;
 
     public:
     Span();
-    Span(int l);
+    Span(unsigned int l);
     Span(Span const &cp);
     ~Span();
     Span &operator=( Span const &cp);
