@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:21:20 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/30 12:27:21 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:37:01 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 #include <string.h>
 #include <exception>
 # include <vector>
-
+# include <algorithm>
+# include <cmath>
+#include <stdint.h>
 class Span{
     public:
         std::vector <int>intVector;
@@ -34,8 +36,8 @@ class Span{
     void addNumber(int nb);
     void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
     std::vector<int>&	getList(void);
-    int shortestSpan();
-    int longestSpan();
+    long long shortestSpan();
+    long long longestSpan();
 
 
     class	ArrayFullException : public std::exception

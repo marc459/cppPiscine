@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/30 12:36:26 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:39:53 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int main()
         Span sp = Span(5);
         Span	sp2(10);
         
+        sp.addNumber(1);
+        sp.addNumber(-27);
         sp.addNumber(5);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
+        sp.addNumber(2147);
         
         std::vector<int>::iterator	itb = sp.getList().begin();
 	    std::vector<int>::iterator	ite = sp.getList().end();

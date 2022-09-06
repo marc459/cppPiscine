@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:19:19 by msantos-          #+#    #+#             */
-/*   Updated: 2022/08/30 12:39:23 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:38:17 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,31 +75,45 @@
 
     }
     
-    int Span::shortestSpan()
+    long long Span::shortestSpan()
     {
         if (this->filledout <= 1)
             throw Span::noSpanException();
-        int min;
-        min = this->intVector[0];
+        long long min;
+        long long tmp;
+        min = UINT32_MAX;
         for(unsigned int i = 0; i < this->filledout; i++)
         {
-            if(this->intVector[i] < min)
-                min = this->intVector[i];
+            for(unsigned int j = 0; j < this->filledout; j++)
+            {
+                tmp = static_cast<long long>(this->intVector[j]) - static_cast<long long>(this->intVector[i]);
+                if(tmp < 0)
+                    tmp = -tmp;
+                if(tmp < min &&  i != j)
+                    min = tmp;
+            }
         }
         return min;
         
     }
 
-    int Span::longestSpan()
+    long long Span::longestSpan()
     {
         if (this->filledout <= 1)
             throw Span::noSpanException();
-        int max;
-        max = this->intVector[0];
+        long long max;
+        long long tmp;
+        max = 0;
         for(unsigned int i = 0; i < this->filledout; i++)
         {
-            if(this->intVector[i] > max)
-                max = this->intVector[i];
+            for(unsigned int j = 0; j < this->filledout; j++)
+            {
+                tmp = static_cast<long long>(this->intVector[j]) - static_cast<long long>(this->intVector[i]);
+                if(tmp < 0)
+                    tmp = -tmp;
+                if(tmp > max &&  i != j)
+                    max = tmp;
+            }
         }
         return max;
         
