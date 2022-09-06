@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:19:19 by msantos-          #+#    #+#             */
-/*   Updated: 2022/09/06 16:38:17 by marcos           ###   ########.fr       */
+/*   Updated: 2022/09/06 18:01:39 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,6 @@
     }
     std::ostream&	operator << (std::ostream &os, Span &sp)
 {
-    for(std::vector<int>::iterator it = sp.intVector.begin(); it != sp.intVector.end(); it++ ) os << " " << *it <<  " ";
+    for(unsigned int it = 0; it < sp.filledout; it++ ) os << " " << sp.intVector[it] <<  " ";
 	return (os);
 }

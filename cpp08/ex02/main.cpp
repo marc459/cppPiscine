@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:47:56 by marcos            #+#    #+#             */
-/*   Updated: 2022/08/30 19:41:34 by msantos-         ###   ########.fr       */
+/*   Updated: 2022/09/06 17:50:09 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,14 @@ int main(void)
 	std::stack<int> s(mstack);
 
     MutantStack<int> mstack2;
-    mstack2.push(3);
-    mstack2.push(3);
-    mstack2.push(3);
-    mstack2.push(3);
-    mstack2.push(3);
+    mstack2.push(0);
+    mstack2.push(0);
+    mstack2.push(0);
+    mstack2.push(0);
+    mstack2.push(0);
 
     int i = 0;
-    MutantStack<int>::reverse_iterator rit = mstack2.rbegin();
-    for (; rit!= mstack2.rend(); ++rit)
+    for (MutantStack<int>::reverse_iterator rit = mstack2.rbegin(); rit!= mstack2.rend(); ++rit)
         *rit = ++i;
     for (MutantStack<int>::iterator it = mstack2.begin(); it != mstack2.end(); ++it)
         std::cout << *it << " ";
