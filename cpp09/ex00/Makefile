@@ -6,13 +6,13 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 03:26:54 by msantos-          #+#    #+#              #
-#    Updated: 2023/03/10 03:26:57 by msantos-         ###   ########.fr        #
+#    Updated: 2023/03/10 15:43:51 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #PROGRAMS
-PROGRAM = ex00
+PROGRAM = btc
 
 #PATHS
 OBJ_PATH = ./objs
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = main.cpp
+PROGRAM_SRCS = BitcoinExchange.cpp
 
 
 #OBJS
