@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:14:31 by marcos            #+#    #+#             */
-/*   Updated: 2022/07/19 18:58:47 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/03/11 04:09:02 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ const char *Bureaucrat::gradeTooLowException::what() const throw() {
 
 void Bureaucrat::signForm(Form &f)
 {
-    
+
     try
     {
         f.beSigned(*this);

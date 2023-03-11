@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 03:26:54 by msantos-          #+#    #+#              #
-#    Updated: 2023/03/10 15:43:51 by msantos-         ###   ########.fr        #
+#    Updated: 2023/03/11 03:46:44 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = BitcoinExchange.cpp
+PROGRAM_SRCS = BitcoinExchange.cpp main.cpp
 
 
 #OBJS
