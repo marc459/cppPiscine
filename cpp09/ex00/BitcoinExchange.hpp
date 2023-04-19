@@ -6,29 +6,36 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:47:41 by msantos-          #+#    #+#             */
-/*   Updated: 2023/03/11 03:54:15 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:56:09 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include <regex>
+#include <stdexcept>
 
-class BitcoinExchange;
-class Form{
+class BitcoinExchange{
     private:
         std::map<std::string, std::string>	dataSet;
         std::map<std::string, std::string>	dataExchange;
 
     public:
         BitcoinExchange();
-        BitcoinExchange(std::map<std::string, std::string>	dataSet);
-		BitcoinExchangeBitcoinExchange(const Form &copy);
+        BitcoinExchange(std::string FileDataSet, std::string FileDataExchange);
+		BitcoinExchange(const BitcoinExchange &copy);
 		virtual	~BitcoinExchange(void);
-		Form &operator=(const Form &op);
+		BitcoinExchange &operator=(const BitcoinExchange &op);
         
-        int    parse(const std::string file);
-
-        class gradeTooHighException : public std::exception 
+        int    parseFileDataSet(const std::string file);
+        int    parseFileDataExchange(const std::string file);
+        
+        std::map<std::string, std::string> getdataSet() const;
+        /*class gradeTooHighException : public std::exception 
         {
             public:
                 virtual const char* what() const throw();
@@ -42,21 +49,10 @@ class Form{
         {
             public:
                 virtual const char* what() const throw();
-        };
-
-        bool getisSigned() const;
-
-        void setIsSigned(bool isSigned);
-
-        std::string getName() const;
-
-
-        int getGradeSigned() const;
-        int getGradeExec() const;
-
+        };*/
 };
 
-std::ostream&	operator << (std::ostream &os, Form &form);
+std::ostream&	operator << (std::ostream &os, BitcoinExchange &e);
 
 
 
