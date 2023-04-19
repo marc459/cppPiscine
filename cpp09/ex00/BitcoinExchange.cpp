@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:47:44 by msantos-          #+#    #+#             */
-/*   Updated: 2023/04/19 17:00:25 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/04/19 20:06:11 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
     std::string              delimiter = " | ";
     std::regex date_regex("^\\d{4}-\\d{2}-\\d{2}$");
     
+    std::cout << "File " << file.is_open() << std::endl;
     std::ifstream file (FileDataSet);
     if ( file.is_open() ) {
         for (std::string line; std::getline(file, line);)
         {
-            //std::cout << line << std::endl;
+            std::cout << line << std::endl;
             if ((pos = line.find(" | ")) != std::string::npos) // fill line
             {
                 key = line.substr(0, pos);
@@ -59,7 +60,10 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
                     else if(std::stoi(value) < 0 || std::stoi(value) > 100)
                         throw std::runtime_error("Error: Invalid Value");
                     else
-                        this->dataSet.insert ( std::pair<std::string,std::string>(key,value) );
+                    {
+                        std::cout << key << " " << value << std::endl;
+                    }
+                        //this->dataSet.insert ( std::pair<std::string,std::string>(key,value) );
                     }
                 catch (std::exception & e)
                 {
@@ -80,10 +84,12 @@ std::map<std::string, std::string> BitcoinExchange::getdataSet() const
 }
 std::ostream&	operator << (std::ostream &os, BitcoinExchange &e)
 {
-	std::map<std::string, std::string>::iterator it;
+    e.getdataSet();
+    os << "foo" << std::endl;
+	/*std::map<std::string, std::string>::iterator it;
     for (it = e.getdataSet().begin(); it != e.getdataSet().end(); ++it) {
         os << it->first << " | " << it->second << std::endl;
-    }
+    }*/
 
 	return (os);
 }
