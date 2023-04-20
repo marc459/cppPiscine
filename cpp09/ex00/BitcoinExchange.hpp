@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:47:41 by msantos-          #+#    #+#             */
-/*   Updated: 2023/04/19 16:56:09 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/04/20 02:16:22 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,6 @@ class BitcoinExchange{
         int    parseFileDataExchange(const std::string file);
         
         std::map<std::string, std::string> getdataSet() const;
-        /*class gradeTooHighException : public std::exception 
-        {
-            public:
-                virtual const char* what() const throw();
-        };
-        class gradeTooLowException : public std::exception 
-        {
-            public:
-                virtual const char* what() const throw();
-        };
-        class formNotSignedException : public std::exception 
-        {
-            public:
-                virtual const char* what() const throw();
-        };*/
 };
 
 std::ostream&	operator << (std::ostream &os, BitcoinExchange &e);
