@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:47:44 by msantos-          #+#    #+#             */
-/*   Updated: 2023/04/20 02:36:15 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/04/21 00:08:22 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 BitcoinExchange::BitcoinExchange(std::string FileDataSet,std::string FileDataExchange )
 {
-    (void)FileDataExchange;
+    parseFileDataExchange(FileDataExchange);
     parseFileDataSet(FileDataSet);
 }
 
@@ -29,6 +29,24 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy): dataSet(copy.data
 BitcoinExchange::~BitcoinExchange(void)
 {
     std::cout << "BitcoinExchange destructor called" << std::endl;
+}
+
+void BitcoinExchange::PrintExchange(std::string date, std::string cuantity)
+{
+    //2011-01-03 => 3 = 0.9
+    
+    std::map<std::string, std::string>::iterator it = this->dataExchange.find(date);
+    //std::cout << "Exchange " << date << " " << cuantity << std::endl;
+    if(it != this->dataExchange.end())
+    {
+         std::cout << it->first << " " << cuantity << std::endl;
+    }
+    it = this->dataExchange.lower_bound(date);
+    if (it != this->dataExchange.begin()) {
+        --it;
+         std::cout << it->first << " => " << cuantity << " = " << ( std::stof(it->second) *  std::stof(cuantity))  << std::endl;
+    }
+   
 }
 
 int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
@@ -53,16 +71,15 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
                 try{
                     if (!std::regex_match(key, date_regex))
                         throw std::runtime_error("Error: Invalid date");
-                    else if(std::stol(value)> 2147483647)
+                    else if(std::stol(value)> 1000)
                         throw std::runtime_error("Error: too large a number.");
                     else if(std::stoi(value) < 0)
                         throw std::runtime_error("Error: not a positive number.");
                     else
                     {
                         //std::cout << key << " " << value << std::endl;
-                        std::cout <<  key << " " << value << " -> " << this->dataSet.size() << std::endl;
-                        std::cout  << this->dataSet.size() << std::endl;
-                        this->dataSet.insert( std::make_pair(key,value) );
+                        //this->dataSet.insert( std::make_pair(key,value) );
+                        PrintExchange(key,value);
                         
                     }
                 }
@@ -92,28 +109,17 @@ int     BitcoinExchange::parseFileDataExchange(std::string FileDataExchange)
     
     
     std::ifstream file (FileDataExchange);
-    std::cout << "File " << file.is_open() << std::endl;
     if ( file.is_open() ) {
         for (std::string line; std::getline(file, line);)
         {
-            if ((pos = line.find(" | ")) != std::string::npos) // fill line
+            if ((pos = line.find(",")) != std::string::npos) // fill line
             {
                 key = line.substr(0, pos);
                 line.erase(0, pos + delimiter.length());
                 value = line;
                 try{
-                    if (!std::regex_match(key, date_regex))
-                        throw std::runtime_error("Error: Invalid date");
-                    else if(std::stol(value)> 2147483647)
-                        throw std::runtime_error("Error: too large a number.");
-                    else if(std::stoi(value) < 0)
-                        throw std::runtime_error("Error: not a positive number.");
-                    else
-                    {
-                        //std::cout << key << " " << value << std::endl;
-                        this->dataExchange.insert( std::pair<std::string,std::string>(key,value) );
-                    }
-                        
+                     std::cout << "DataExchange " << key << " " << value << std::endl;
+                    this->dataExchange.insert( std::make_pair(key,value) ); 
                 }
                 catch (std::exception & e)
                 {
@@ -132,14 +138,3 @@ std::map<std::string, std::string> BitcoinExchange::getdataSet() const
 {
     return this->dataSet;
 }
-std::ostream&	operator << (std::ostream &os, BitcoinExchange &e)
-{
-    e.getdataSet();
-	std::map<std::string, std::string>::iterator it;
-    for (it = e.getdataSet().begin(); it != e.getdataSet().end(); ++it) {
-        os << it->first << " | " << it->second << std::endl;
-    }
-
-	return (os);
-}
-    

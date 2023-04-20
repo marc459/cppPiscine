@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 03:29:35 by msantos-          #+#    #+#             */
-/*   Updated: 2023/04/19 16:59:19 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/04/21 00:08:12 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 int main(int argc, char **argv)
 {
-    (void)argc;
-    BitcoinExchange b = BitcoinExchange(argv[1], "data.csv");
-    std::cout << b;
+    if(argc == 2)
+        BitcoinExchange b = BitcoinExchange(argv[1], "data.csv");
 }
 
