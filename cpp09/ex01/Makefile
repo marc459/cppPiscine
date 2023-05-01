@@ -6,13 +6,13 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 03:26:54 by msantos-          #+#    #+#              #
-#    Updated: 2023/04/27 22:15:25 by msantos-         ###   ########.fr        #
+#    Updated: 2023/05/01 20:54:06 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #PROGRAMS
-PROGRAM = rpn
+PROGRAM = RPN
 
 #PATHS
 OBJ_PATH = ./objs
