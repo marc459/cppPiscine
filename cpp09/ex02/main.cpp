@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:15:01 by msantos-          #+#    #+#             */
-/*   Updated: 2023/05/01 21:15:02 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:28:25 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 #include "PmergeM.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
+    PmergeM *sort1 = new PmergeM(" 3 g 5 9 7 4");
+    delete sort1;
 
 }

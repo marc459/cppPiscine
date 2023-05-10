@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:21:40 by msantos-          #+#    #+#             */
-/*   Updated: 2023/05/02 19:33:25 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:26:03 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <cstdlib>
 #include <vector>
 #include <ctime>
+#include <sstream>
 #include <deque>
 
 class PmergeM{
