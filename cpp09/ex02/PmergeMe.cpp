@@ -18,12 +18,12 @@ PmergeMe::PmergeMe(std::string expresion)
     }
     
     std::cout << "Before : ";
-	printvecval();
+	printVector();
 	std::clock_t vecstart_time = std::clock();
-	vecmergesort(v, 0, v.size());
+	vectorMergeSort(v, 0, v.size()-1);
 	std::clock_t vecend_time = std::clock();
 	std::cout << "After : ";
-	printvecval();
+	printVector();
 	double time_elapsed = static_cast<double>(vecend_time - vecstart_time) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << this->v.size() << " elements with std::[vector] : " << std::fixed << std::setprecision(5) << (time_elapsed * 1000000.0) << " us"<< std::endl;
 	// std::clock_t deqstart_time = std::clock();
@@ -37,31 +37,29 @@ PmergeMe::~PmergeMe()
 
 }
 
-void PmergeMe::printvecval() {
+void PmergeMe::printVector() {
 	std::vector<int>::iterator it;
 	for (it = v.begin(); it != v.end(); it++)
-		std::cout << "|"<< *it << "| ";
+		std::cout <<  *it << " ";
 	std::cout << std::endl;
 }
 
-/* Function to merge the subarrays of a[] */  
-void PmergeMe::vecmerge(std::vector<int> a, int beg, int mid, int end)    
+void PmergeMe::vectorMerge(std::vector<int> &a, int beg, int mid, int end)    
 {    
     int i, j, k;  
     int n1 = mid - beg + 1;    
     int n2 = end - mid;    
       
-    int LeftArray[n1], RightArray[n2]; //temporary arrays
+    int LeftArray[n1], RightArray[n2];
       
-    /* copy data to temp arrays */  
     for (int i = 0; i < n1; i++)    
     LeftArray[i] = a[beg + i];    
     for (int j = 0; j < n2; j++)    
     RightArray[j] = a[mid + 1 + j];    
 
-    i = 0; /* initial index of first sub-array */  
-    j = 0; /* initial index of second sub-array */   
-    k = beg;  /* initial index of merged sub-array */  
+    i = 0; 
+    j = 0;  
+    k = beg;
       
     while (i < n1 && j < n2)    
     {    
@@ -93,14 +91,14 @@ void PmergeMe::vecmerge(std::vector<int> a, int beg, int mid, int end)
     
 }    
   
-void PmergeMe::vecmergesort(std::vector<int> a, int beg, int end)  
+void PmergeMe::vectorMergeSort(std::vector<int> &a, int beg, int end)  
 {  
     if (beg < end)   
     {  
         int mid = (beg + end) / 2;  
-        vecmergesort(a, beg, mid); 
-        vecmergesort(a, mid + 1, end); 
-        vecmerge(a, beg, mid, end);  
+        vectorMergeSort(a, beg, mid); 
+        vectorMergeSort(a, mid + 1, end); 
+        vectorMerge(a, beg, mid, end);  
         
     }  
 }  

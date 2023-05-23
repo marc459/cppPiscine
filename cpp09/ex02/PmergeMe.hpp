@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PmergeMe.hpp                                        :+:      :+:    :+:  */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:21:40 by msantos-          #+#    #+#             */
-/*   Updated: 2023/05/10 12:26:03 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:25:47 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 class PmergeMe{
     private:
         PmergeMe();
-        void vecmerge( int beg, int mid, int end);
-        void vecmergesort( int beg, int end);
-        void printvecval();
+        void vectorMerge(std::vector<int> &a, int beg, int mid, int end);
+        void vectorMergeSort(std::vector<int> &a, int beg, int end);
+        void printVector();
         
     public:
         std::deque<int> d;
