@@ -12,7 +12,7 @@
 
 
 #PROGRAMS
-PROGRAM = PmergeM
+PROGRAM = PmergeMe
 
 #PATHS
 OBJ_PATH = ./objs
@@ -20,7 +20,7 @@ SRC_PATH = .
 INCLUDES = -I ./includes
 
 #SRCS
-PROGRAM_SRCS = PmergeM.cpp main.cpp
+PROGRAM_SRCS = PmergeMe.cpp main.cpp
 
 
 #OBJS

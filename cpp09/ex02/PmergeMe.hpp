@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PmergeM.hpp                                        :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                        :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PMERGEM_HPP
-#define PMERGEM_HPP
+#ifndef PMERGEME_HPP
+#define PMERGEME_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <exception>
-#include <cctype>
-#include <cstdlib>
-#include <vector>
 #include <ctime>
-#include <sstream>
+#include <string>
+#include <vector>
 #include <deque>
+#include <sstream>
 
-class PmergeM{
+class PmergeMe{
     private:
-        PmergeM();
+        PmergeMe();
+        void vecmerge( int beg, int mid, int end);
+        void vecmergesort( int beg, int end);
+        void printvecval();
         
     public:
-        struct timer
-        {
-            clock_t	start;
-            clock_t	vectortimer;
-            clock_t	dequetimer;
-        };
-        
         std::deque<int> d;
         std::vector<int> v;
-        void	sortDeque();
-        void	sortVector();
 
-        PmergeM(std::string expresion);
-        ~PmergeM();
+        PmergeMe(std::string expresion);
+        ~PmergeMe();
 };
 
 #endif

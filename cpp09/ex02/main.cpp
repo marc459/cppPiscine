@@ -11,12 +11,25 @@
 /* ************************************************************************** */
 
 
-
-#include "PmergeM.hpp"
+#include "PmergeMe.hpp"
 
 int main()
 {
-    PmergeM *sort1 = new PmergeM(" 3 g 5 9 7 4");
+    PmergeMe *sort1 = new PmergeMe(" 3 88 5 9 74 4");
     delete sort1;
 
 }
+
+/*
+int main()  
+{  
+    int a[] = { 11, 30, 24, 7, 31, 16, 39, 41 };  
+    int n = sizeof(a) / sizeof(a[0]);  
+    cout<<"Before sorting array elements are - \n";  
+    printArray(a, n);  
+    mergeSort(a, 0, n - 1);  
+    cout<<"\nAfter sorting array elements are - \n";  
+    printArray(a, n);
+    std::cout << std::endl;
+    return 0;  
+}  */

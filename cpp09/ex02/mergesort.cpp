@@ -1,9 +1,10 @@
-#include <iostream>  
+#include <iostream>
+#include <vector>  
   
 using namespace std;  
   
 /* Function to merge the subarrays of a[] */  
-void merge(int a[], int beg, int mid, int end)    
+void merge(std::vector<int> a, int beg, int mid, int end)    
 {    
     int i, j, k;  
     int n1 = mid - beg + 1;    
@@ -51,7 +52,7 @@ void merge(int a[], int beg, int mid, int end)
     
 }    
   
-void mergeSort(int a[], int beg, int end)  
+void mergeSort(std::vector<int> a, int beg, int end)  
 {  
     if (beg < end)   
     {  
@@ -64,7 +65,7 @@ void mergeSort(int a[], int beg, int end)
 }  
   
 /* Function to print the array */  
-void printArray(int a[], int n)  
+void printArray(std::vector<int> a, int n)  
 {  
     int i;  
     for (i = 0; i < n; i++)  
@@ -73,8 +74,8 @@ void printArray(int a[], int n)
   
 int main()  
 {  
-    int a[] = { 11, 30, 24, 7, 31, 16, 39, 41 };  
-    int n = sizeof(a) / sizeof(a[0]);  
+    std::vector<int> a= { 11, 30, 24, 7, 31, 16, 39, 41 };  
+    int n = a.size();  
     cout<<"Before sorting array elements are - \n";  
     printArray(a, n);  
     mergeSort(a, 0, n - 1);  
