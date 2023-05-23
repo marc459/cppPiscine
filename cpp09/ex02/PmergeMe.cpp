@@ -2,19 +2,12 @@
 #include "PmergeMe.hpp"
 
 
-PmergeMe::PmergeMe(std::string expresion)
+PmergeMe::PmergeMe(int *arr, int size)
 {
-    
-    std::stringstream ss(expresion);
-    int num;
 
-    while (ss >> num) {
-        if (ss.fail()) {
-            std::cout << "Error" << std::endl;
-            return;
-        }
-        v.push_back(num);
-        d.push_back(num);
+    for (int i = 0; i < size; i++) {
+        v.push_back(arr[i]);
+        d.push_back(arr[i]);
     }
     
     std::cout << "Before : ";
@@ -62,15 +55,7 @@ void PmergeMe::vectorMerge(std::vector<int> &a, int beg, int mid, int end)
     for (int i = 0; i < n1; i++)    
         LeftArray[i] = a[beg + i];    
     for (int j = 0; j < n2; j++)    
-        RightArray[j] = a[mid + 1 + j];    
-    for(int i = 0; i< n1; i++)
-        std::cout << " " << LeftArray[i];
-    std::cout << std::endl;
-
-    for(int i = 0; i< n2; i++)
-        std::cout << "-" << RightArray[i];
-    std::cout << std::endl;
-
+        RightArray[j] = a[mid + 1 + j];
     i = 0; 
     j = 0;  
     k = beg;
@@ -116,19 +101,11 @@ void PmergeMe::dequeMerge(std::deque<int> &a, int beg, int mid, int end)
         LeftArray[i] = a[beg + i];    
     for (int j = 0; j < n2; j++)    
         RightArray[j] = a[mid + 1 + j];    
-    for(int i = 0; i< n1; i++)
-        std::cout << " " << LeftArray[i];
-    std::cout << std::endl;
-
-    for(int i = 0; i< n2; i++)
-        std::cout << "-" << RightArray[i];
-    std::cout << std::endl;
-
     i = 0; 
     j = 0;  
     k = beg;
       
-    while (i < n1 && j < n2)    
+    while (i < n1 && j < n2)
     {    
         if(LeftArray[i] <= RightArray[j])    
         {    
@@ -153,8 +130,8 @@ void PmergeMe::dequeMerge(std::deque<int> &a, int beg, int mid, int end)
     {    
         a[k] = RightArray[j];    
         j++;    
-        k++;    
-    }  
+        k++;
+    }
     
 }     
   

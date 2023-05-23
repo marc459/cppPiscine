@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:21:40 by msantos-          #+#    #+#             */
-/*   Updated: 2023/05/23 17:25:47 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/05/23 22:02:26 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class PmergeMe{
         std::deque<int> d;
         std::vector<int> v;
 
-        PmergeMe(std::string expresion);
+        PmergeMe(int *arr, int size);
         ~PmergeMe();
 };
 

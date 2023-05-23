@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:47:44 by msantos-          #+#    #+#             */
-/*   Updated: 2023/04/21 00:08:22 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:48:41 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
     
     
     std::ifstream file (FileDataSet);
-    std::cout << "File " << file.is_open() << std::endl;
     if ( file.is_open() ) {
         for (std::string line; std::getline(file, line);)
         {
@@ -76,12 +75,7 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
                     else if(std::stoi(value) < 0)
                         throw std::runtime_error("Error: not a positive number.");
                     else
-                    {
-                        //std::cout << key << " " << value << std::endl;
-                        //this->dataSet.insert( std::make_pair(key,value) );
                         PrintExchange(key,value);
-                        
-                    }
                 }
                 catch (std::exception & e)
                 {
@@ -118,7 +112,6 @@ int     BitcoinExchange::parseFileDataExchange(std::string FileDataExchange)
                 line.erase(0, pos + delimiter.length());
                 value = line;
                 try{
-                     std::cout << "DataExchange " << key << " " << value << std::endl;
                     this->dataExchange.insert( std::make_pair(key,value) ); 
                 }
                 catch (std::exception & e)
