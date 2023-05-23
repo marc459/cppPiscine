@@ -28,6 +28,10 @@ class PmergeMe{
         void vectorMerge(std::vector<int> &a, int beg, int mid, int end);
         void vectorMergeSort(std::vector<int> &a, int beg, int end);
         void printVector();
+
+        void dequeMerge(std::deque<int> &a, int beg, int mid, int end);
+        void dequeMergeSort(std::deque<int> &a, int beg, int end);
+        void printDeque();
         
     public:
         std::deque<int> d;
