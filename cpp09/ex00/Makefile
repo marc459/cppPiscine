@@ -27,9 +27,9 @@ PROGRAM_SRCS = BitcoinExchange.cpp main.cpp
 PROGRAM_OBJS = $(addprefix $(OBJ_PATH)/,$(PROGRAM_SRCS:.cpp=.o))
 
 #FLAGS
-CXX = clang++
+CXX = c++
 #clang 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 #-stdlib=libc++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 #INSTRUCTIONS
 all: $(PROGRAM)

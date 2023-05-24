@@ -20,10 +20,16 @@ BitcoinExchange::BitcoinExchange(std::string FileDataSet,std::string FileDataExc
     parseFileDataSet(FileDataSet);
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy): dataSet(copy.dataSet)
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
 {
-    
+    dataExchange = copy.dataExchange;
     std::cout << "BitcoinExchange copy constructor called" << std::endl;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &cp)
+{
+    this->dataExchange = cp.dataExchange;
+    return (*this);
 }
 
 BitcoinExchange::~BitcoinExchange(void)
@@ -31,12 +37,19 @@ BitcoinExchange::~BitcoinExchange(void)
     std::cout << "BitcoinExchange destructor called" << std::endl;
 }
 
+float ft_stof(const std::string& str) {
+    const char* charPtr = str.c_str();
+    return static_cast<float>(std::atof(charPtr));
+}
+
+float ft_stoi(const std::string& str) {
+    const char* charPtr = str.c_str();
+    return static_cast<float>(std::atoi(charPtr));
+}
+
 void BitcoinExchange::PrintExchange(std::string date, std::string cuantity)
 {
-    //2011-01-03 => 3 = 0.9
-    
     std::map<std::string, std::string>::iterator it = this->dataExchange.find(date);
-    //std::cout << "Exchange " << date << " " << cuantity << std::endl;
     if(it != this->dataExchange.end())
     {
          std::cout << it->first << " " << cuantity << std::endl;
@@ -44,21 +57,65 @@ void BitcoinExchange::PrintExchange(std::string date, std::string cuantity)
     it = this->dataExchange.lower_bound(date);
     if (it != this->dataExchange.begin()) {
         --it;
-         std::cout << it->first << " => " << cuantity << " = " << ( std::stof(it->second) *  std::stof(cuantity))  << std::endl;
+         std::cout << it->first << " => " << cuantity << " = " << ( ft_stof(it->second) * ft_stof(cuantity))  << std::endl;
     }
    
 }
 
-int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
+
+
+bool    isDate(std::string date)
+{
+    int day = 0;
+    int month = 0;
+    int year = 0;
+    size_t i = 0;
+    if (date.length() != 10)
+        return false;
+    if (date[4] != '-' || date[7] != '-')
+        return false;
+
+    while(date[i] != '-' && i < date.length())
+    {
+        if(!(date[i] > 47 && date[i] < 58))
+            return false;
+        else
+            year = year * 10 + (date[i] - '0');
+        i++;
+    }
+    i++;
+    while(date[i] != '-' && i < date.length())
+    {
+        if(!(date[i] > 47 && date[i] < 58))
+            return false;
+        else
+            month = month * 10 + (date[i] - '0');
+        i++;
+    }
+    i++;
+    while( i < date.length())
+    {
+        if(!(date[i] > 47 && date[i] < 58))
+            return false;
+        else
+            day = day * 10 + (date[i] - '0');
+        i++;
+    }
+    if(year <= 0 || month <= 0 || month > 12 || day <= 0 || day > 31)
+        return false;
+    return(true);
+
+
+}
+
+void     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
 {
     size_t                   pos = 0;
 	std::string              key;
     std::string              value;
     std::string              delimiter = " | ";
-    std::regex date_regex("^\\d{4}-\\d{2}-\\d{2}$");
     
-    
-    std::ifstream file (FileDataSet);
+    std::ifstream file (FileDataSet.c_str());
     if ( file.is_open() ) {
         for (std::string line; std::getline(file, line);)
         {
@@ -68,11 +125,11 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
                 line.erase(0, pos + delimiter.length());
                 value = line;
                 try{
-                    if (!std::regex_match(key, date_regex))
+                    if (!isDate(key))
                         throw std::runtime_error("Error: Invalid date");
-                    else if(std::stol(value)> 1000)
+                    else if(ft_stoi(value)> 1000)
                         throw std::runtime_error("Error: too large a number.");
-                    else if(std::stoi(value) < 0)
+                    else if(ft_stoi(value) < 0)
                         throw std::runtime_error("Error: not a positive number.");
                     else
                         PrintExchange(key,value);
@@ -89,24 +146,21 @@ int     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
         }
     }
     file.close();
-       
-    return (0);
 }
 
-int     BitcoinExchange::parseFileDataExchange(std::string FileDataExchange)
+void     BitcoinExchange::parseFileDataExchange(std::string FileDataExchange)
 {
     size_t                   pos = 0;
 	std::string              key;
     std::string              value;
     std::string              delimiter = ",";
-    std::regex date_regex("^\\d{4}-\\d{2}-\\d{2}$");
     
     
-    std::ifstream file (FileDataExchange);
+    std::ifstream file (FileDataExchange.c_str());
     if ( file.is_open() ) {
         for (std::string line; std::getline(file, line);)
         {
-            if ((pos = line.find(",")) != std::string::npos) // fill line
+            if ((pos = line.find(",")) != std::string::npos)
             {
                 key = line.substr(0, pos);
                 line.erase(0, pos + delimiter.length());
@@ -123,11 +177,4 @@ int     BitcoinExchange::parseFileDataExchange(std::string FileDataExchange)
         }
     }
     file.close();
-       
-    return (0);
-}
-
-std::map<std::string, std::string> BitcoinExchange::getdataSet() const
-{
-    return this->dataSet;
 }

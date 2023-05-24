@@ -16,26 +16,24 @@
 #include <fstream>
 #include <string>
 #include <map>
-#include <regex>
 #include <stdexcept>
+#include <cstdlib>
 
 class BitcoinExchange{
     private:
-        std::map<std::string, std::string>	dataSet;
         std::map<std::string, std::string>	dataExchange;
 
     public:
         BitcoinExchange();
         BitcoinExchange(std::string FileDataSet, std::string FileDataExchange);
 		BitcoinExchange(const BitcoinExchange &copy);
+        BitcoinExchange &operator=(const BitcoinExchange &cp);
 		virtual	~BitcoinExchange(void);
-		BitcoinExchange &operator=(const BitcoinExchange &op);
         
-        int    parseFileDataSet(const std::string file);
-        int    parseFileDataExchange(const std::string file);
+        void    parseFileDataSet(const std::string file);
+        void    parseFileDataExchange(const std::string file);
         void   PrintExchange(std::string date, std::string cuantity);
         
-        std::map<std::string, std::string> getdataSet() const;
 };
 
 #endif

@@ -17,6 +17,14 @@
 int main(int argc, char **argv)
 {
     if(argc == 2)
-        BitcoinExchange b = BitcoinExchange(argv[1], "data.csv");
+    {
+        std::ifstream file (argv[1]);
+        if(file.is_open())
+            BitcoinExchange b = BitcoinExchange(argv[1], "data.csv");
+        else
+            std::cout << "Error: could not open file." << std::endl;
+
+    }
+        
 }
 
