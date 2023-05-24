@@ -1,12 +1,23 @@
 #include "Rpn.hpp"
 
+
+Rpn::Rpn(Rpn &cp)
+{
+    this->polishStack = cp.polishStack;
+}
+Rpn &Rpn::operator=(Rpn &cp)
+{
+    this->polishStack = cp.polishStack;
+    return (*this);
+}
+
 Rpn::Rpn(std::string expresion)
 {
     int op1;
     int op2;
     for (size_t i = 0; i < expresion.size(); i++) {
         char c = expresion[i];
-        if (isdigit(c)) {
+        if (c > 47 && c < 58) {
             int num = c - '0';
             this->polishStack.push(num);
         } else if (c == '+' || c == '-' || c == '*' || c == '/') {
@@ -37,7 +48,7 @@ Rpn::Rpn(std::string expresion)
             return;
         }
     }
-    if(!this->polishStack.empty())
+    if(polishStack.size() == 1)
         std::cout <<  this->polishStack.top() << std::endl;
     else
         std::cout <<  "Error" << std::endl;

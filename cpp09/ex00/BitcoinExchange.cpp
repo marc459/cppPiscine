@@ -23,7 +23,6 @@ BitcoinExchange::BitcoinExchange(std::string FileDataSet,std::string FileDataExc
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
 {
     dataExchange = copy.dataExchange;
-    std::cout << "BitcoinExchange copy constructor called" << std::endl;
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &cp)
@@ -32,10 +31,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &cp)
     return (*this);
 }
 
-BitcoinExchange::~BitcoinExchange(void)
-{
-    std::cout << "BitcoinExchange destructor called" << std::endl;
-}
+BitcoinExchange::~BitcoinExchange(void){}
 
 float ft_stof(const std::string& str) {
     const char* charPtr = str.c_str();
@@ -61,8 +57,6 @@ void BitcoinExchange::PrintExchange(std::string date, std::string cuantity)
     }
    
 }
-
-
 
 bool    isDate(std::string date)
 {

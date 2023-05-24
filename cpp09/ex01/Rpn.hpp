@@ -23,6 +23,8 @@ class Rpn{
         
     public:
         Rpn(std::string expresion);
+        Rpn(Rpn &cp);
+        Rpn &operator=(Rpn &cp);
         ~Rpn();
         
     
