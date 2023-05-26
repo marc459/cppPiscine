@@ -20,3 +20,10 @@ Containers -> https://cplusplus.com/reference/stl/
 CPP09 - https://github.com/apena-ba/cpp09
         https://github.com/Winspear22/CPP09/blob/main/ex02/PmergeMe.hpp
         https://github.com/Joseph-Enkaoua/cpp09/blob/main/ex02/PmergeMe.cpp
+EX01
+         2011-01-03 | a
+
+EX02
+        ./RPN "0 0 /"
+        ./RPN "5 * * 1 8 /"
+        ./RPN "1 * * 1"
