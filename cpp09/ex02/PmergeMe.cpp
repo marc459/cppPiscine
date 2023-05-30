@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/30 14:41:31 by msantos-          #+#    #+#             */
+/*   Updated: 2023/05/30 14:53:54 by msantos-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "PmergeMe.hpp"
 
@@ -17,13 +29,13 @@ PmergeMe::PmergeMe(int *arr, int size)
 	std::clock_t vecend_time = std::clock();
 	std::cout << "After : ";
 	printVector();
-	double time_elapsed = static_cast<double>(vecend_time - vecstart_time) / CLOCKS_PER_SEC;
-	std::cout << "Time to process a range of " << this->v.size() << " elements with std::[vector] : " << std::fixed << std::setprecision(5) << (time_elapsed * 1000000.0) << " us"<< std::endl;
+	double time = static_cast<double>(vecend_time - vecstart_time) / CLOCKS_PER_SEC;
+	std::cout << "Time to process a range of " << this->v.size() << " elements with std::[vector] : " << std::fixed << std::setprecision(5) << (time * 1000000.0) << " us"<< std::endl;
 	std::clock_t deqstart_time = std::clock();
 	dequeMergeSort(d, 0, d.size() -1);
 	std::clock_t deqend_time = std::clock();
-	time_elapsed = static_cast<double>(deqend_time - deqstart_time) / CLOCKS_PER_SEC;
-	std::cout << "Time to process a range of " << d.size() << " elements with std::[deque] : " << std::fixed << std::setprecision(5) << (time_elapsed * 1000000.0) << " us"<< std::endl;
+	time = static_cast<double>(deqend_time - deqstart_time) / CLOCKS_PER_SEC;
+	std::cout << "Time to process a range of " << d.size() << " elements with std::[deque] : " << std::fixed << std::setprecision(5) << (time * 1000000.0) << " us"<< std::endl;
 }
 PmergeMe::~PmergeMe()
 {

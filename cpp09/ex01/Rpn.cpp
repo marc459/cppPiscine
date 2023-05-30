@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Rpn.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/30 14:41:20 by msantos-          #+#    #+#             */
+/*   Updated: 2023/05/31 01:34:32 by msantos-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Rpn.hpp"
 
 
@@ -33,12 +46,25 @@ Rpn::Rpn(std::string expresion)
                 this->polishStack.pop();
 
                 int res;
+                
                 switch (c) {
                     case '+': res = op2 + op1; break;
                     case '-': res = op2 - op1; break;
                     case '*': res = op2 * op1; break;
-                    case '/': res = op2 / op1; break;
+                    case '/': 
+                    {
+                        if(op1 != 0)
+                            res = op2 / op1;
+                        else
+                        {
+                            std::cout <<  "Error" << std::endl;
+                            return;
+                        }
+                            
+                        break;
+                    }
                 }
+                
                 this->polishStack.push(res);
             }
         }
@@ -51,7 +77,14 @@ Rpn::Rpn(std::string expresion)
     if(polishStack.size() == 1)
         std::cout <<  this->polishStack.top() << std::endl;
     else
-        std::cout <<  "Error" << std::endl;
+    {
+        std::cout <<  "Error " << polishStack.size() << std::endl;
+        std::cout <<  this->polishStack.top() << std::endl;
+        this->polishStack.pop();
+        std::cout <<  this->polishStack.top() << std::endl;
+        this->polishStack.pop();
+        std::cout <<  this->polishStack.top() << std::endl;
+    }
 }
 
 Rpn::~Rpn()

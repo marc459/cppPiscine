@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:47:44 by msantos-          #+#    #+#             */
-/*   Updated: 2023/05/23 21:48:41 by msantos-         ###   ########.fr       */
+/*   Updated: 2023/05/30 22:54:37 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ float ft_stof(const std::string& str) {
     return static_cast<float>(std::atof(charPtr));
 }
 
+bool ft_sisnumber(const std::string& str) {
+    if(str.length() == 0)
+        return false;
+    for(size_t i = 0; i < str.length(); i++)
+    {
+        if(!(str[i] > 47 && str[i] < 58))
+            return false;
+    }
+    return true;
+}
 float ft_stoi(const std::string& str) {
     const char* charPtr = str.c_str();
     return static_cast<float>(std::atoi(charPtr));
@@ -123,6 +133,8 @@ void     BitcoinExchange::parseFileDataSet(std::string FileDataSet)
                         throw std::runtime_error("Error: Invalid date");
                     else if(ft_stoi(value)> 1000)
                         throw std::runtime_error("Error: too large a number.");
+                    else if(ft_sisnumber(value) == false)
+                         throw std::runtime_error("Error: value is not a number");
                     else if(ft_stoi(value) < 0)
                         throw std::runtime_error("Error: not a positive number.");
                     else
